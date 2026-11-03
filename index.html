@@ -3,386 +3,234 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HOLLYWOOD DIRECTOR | Cinema Portfolio</title>
+    <title>Zeki Yahya | Film Director & Author</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Montserrat:wght@300;400;600;800&family=Tajawal:wght@300;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@700;800&family=Tajawal:wght@300;500;700;900&display=swap" rel="stylesheet">
     
-    <!-- FontAwesome Icons -->
+    <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         :root {
-            --gold: #D4AF37;
-            --gold-light: #FFF099;
-            --dark-bg: #0A0A0C;
-            --card-bg: #141419;
-            --accent-red: #E50914;
-            --text-main: #FFFFFF;
-            --text-sub: #A0A0A0;
-            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            --bg-color: #0c0c0e;
+            --surface: #16161a;
+            --primary: #ff3366;
+            --secondary: #7928ca;
+            --accent: #00dfd8;
+            --text-main: #ffffff;
+            --text-muted: #94a3b8;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Tajawal', 'Montserrat', sans-serif;
+            font-family: 'Tajawal', sans-serif;
         }
 
         body {
-            background-color: var(--dark-bg);
+            background-color: var(--bg-color);
             color: var(--text-main);
             overflow-x: hidden;
         }
 
-        /* Header & Navigation */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 20px 50px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.9), transparent);
-            backdrop-filter: blur(10px);
-        }
-
-        .logo {
-            font-family: 'Cinzel', serif;
-            font-size: 1.8rem;
-            font-weight: 900;
-            letter-spacing: 2px;
-            color: var(--gold);
-            text-transform: uppercase;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-        }
-
-        nav a {
-            color: var(--text-main);
-            text-decoration: none;
-            font-weight: 500;
-            transition: var(--transition);
-        }
-
-        nav a:hover {
-            color: var(--gold);
-        }
-
-        .lang-btn {
-            background: transparent;
-            border: 1px solid var(--gold);
-            color: var(--gold);
-            padding: 8px 18px;
-            border-radius: 30px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: var(--transition);
-        }
-
-        .lang-btn:hover {
-            background: var(--gold);
-            color: var(--dark-bg);
-        }
-
         /* Hero Section */
         .hero {
-            height: 100vh;
-            position: relative;
+            min-height: 100vh;
             display: flex;
-            align-items: center;
+            flex-direction: column;
             justify-content: center;
+            align-items: center;
             text-align: center;
-            background: radial-gradient(circle, rgba(20,20,25,0.4) 0%, rgba(10,10,12,1) 100%),
-                        url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=2070') center/cover no-repeat;
-        }
-
-        .hero-overlay {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.6);
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 900px;
             padding: 0 20px;
+            position: relative;
+            background: radial-gradient(circle at 20% 30%, rgba(121, 40, 202, 0.15) 0%, transparent 40%),
+                        radial-gradient(circle at 80% 70%, rgba(255, 51, 102, 0.15) 0%, transparent 40%);
         }
 
-        .hero-title {
-            font-family: 'Cinzel', serif;
-            font-size: 4rem;
+        .hero-badge {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 6px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 10px 20px rgba(255, 51, 102, 0.3);
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 5rem);
             font-weight: 900;
-            background: linear-gradient(45deg, #FFF, var(--gold));
+            margin-bottom: 20px;
+            line-height: 1.2;
+            background: linear-gradient(to right, #fff, var(--text-muted));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 15px;
-            text-transform: uppercase;
         }
 
-        .hero-subtitle {
-            font-size: 1.5rem;
-            color: var(--text-sub);
-            margin-bottom: 30px;
-            letter-spacing: 1px;
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin-bottom: 40px;
+            line-height: 1.6;
         }
 
-        .cta-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: linear-gradient(45deg, var(--gold), var(--gold-light));
-            color: var(--dark-bg);
-            padding: 15px 40px;
-            font-size: 1.1rem;
-            font-weight: 700;
-            border-radius: 50px;
-            text-decoration: none;
-            transition: var(--transition);
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
-        }
-
-        .cta-btn:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 0 35px rgba(212, 175, 55, 0.8);
-        }
-
-        /* Movie Section */
-        .section {
-            padding: 100px 50px;
+        /* Gallery Grid */
+        .gallery-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 20px;
         }
 
         .section-title {
-            font-family: 'Cinzel', serif;
-            font-size: 2.5rem;
-            color: var(--gold);
-            text-align: center;
-            margin-bottom: 50px;
-            position: relative;
+            font-size: 2.2rem;
+            font-weight: 900;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
 
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 3px;
-            background: var(--gold);
-            margin: 15px auto 0;
+        .section-title span {
+            color: var(--primary);
         }
 
-        .movies-grid {
+        .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 30px;
         }
 
-        .movie-card {
-            background: var(--card-bg);
-            border-radius: 15px;
+        .card {
+            background: var(--surface);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .card-img-wrapper {
+            height: 280px;
             overflow: hidden;
             position: relative;
-            transition: var(--transition);
-            cursor: pointer;
-            border: 1px solid rgba(255,255,255,0.05);
         }
 
-        .movie-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--gold);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.8);
-        }
-
-        .movie-poster {
+        .card-img-wrapper img {
             width: 100%;
-            height: 420px;
+            height: 100%;
             object-fit: cover;
+            transition: transform 0.6s ease;
         }
 
-        .movie-info {
-            padding: 20px;
+        .card:hover .card-img-wrapper img {
+            transform: scale(1.08);
         }
 
-        .movie-title {
-            font-size: 1.4rem;
-            margin-bottom: 10px;
-            color: var(--text-main);
+        .card-content {
+            padding: 25px;
         }
 
-        .movie-tag {
+        .tag {
             display: inline-block;
-            background: rgba(212, 175, 55, 0.15);
-            color: var(--gold);
             padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            margin-bottom: 15px;
+            background: rgba(0, 223, 216, 0.1);
+            color: var(--accent);
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 12px;
         }
 
-        .movie-desc {
-            color: var(--text-sub);
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: var(--text-muted);
             font-size: 0.95rem;
             line-height: 1.6;
         }
 
         /* Footer */
         footer {
-            background: #050507;
-            padding: 40px;
             text-align: center;
-            border-top: 1px solid rgba(255,255,255,0.05);
-            color: var(--text-sub);
+            padding: 50px 20px;
+            background: #08080a;
+            color: var(--text-muted);
+            border-top: 1px solid rgba(255, 255, 255,.05);
+            margin-top: 80px;
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
-            header { padding: 15px 20px; }
-            .hero-title { font-size: 2.5rem; }
-            .section { padding: 60px 20px; }
-            nav ul { display: none; }
+            .grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="logo">DIRECTOR</div>
-        <nav>
-            <ul>
-                <li><a href="#about" id="nav-about">عن المخرج</a></li>
-                <li><a href="#movies" id="nav-movies">الأفلام</a></li>
-                <li><a href="#awards" id="nav-awards">الجوائز</a></li>
-            </ul>
-        </nav>
-        <button class="lang-btn" onclick="toggleLanguage()">EN</button>
-    </header>
-
     <section class="hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1 class="hero-title" id="hero-title">رؤية سينمائية عالمية</h1>
-            <p class="hero-subtitle" id="hero-sub">إخراج وتأليف أفلام روائية ووثائقية حائزة على جوائز دولية</p>
-            <a href="#movies" class="cta-btn" id="hero-btn">
-                <i class="fas fa-play"></i> استعرض العرض الترويجي
-            </a>
-        </div>
+        <div class="hero-badge">مخرج سينمائي وباحث</div>
+        <h1>رؤية بصرية تتجاوز المألوف</h1>
+        <p>استكشاف الأعماق الوجودية والجمالية من خلال سرد بصري تجريبي وروائي يلامس الروح.</p>
     </section>
 
-    <section class="section" id="movies">
-        <h2 class="section-title" id="sec-movies">الأعمال السينمائية</h2>
-        <div class="movies-grid">
-            <div class="movie-card">
-                <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=1000" class="movie-poster" alt="Movie Poster">
-                <div class="movie-info">
-                    <span class="movie-tag" id="m1-tag">روائي طويل</span>
-                    <h3 class="movie-title" id="m1-title">صناعة الوهم</h3>
-                    <p class="movie-desc" id="m1-desc">فيلم سينمائي يستعرض أعماق التجربة الإنسانية في صراع الواقع والخيال.</p>
+    <section class="gallery-section">
+        <h2 class="section-title">أبرز <span>الأعمال</span></h2>
+        
+        <div class="grid">
+            <div class="card">
+                <div class="card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=1000" alt="Film">
+                </div>
+                <div class="card-content">
+                    <span class="tag">روائي طويل</span>
+                    <h3>صناعة الوهم</h3>
+                    <p>فيلم سينمائي يستعرض أعماق التجربة الإنسانية في صراع الواقع والخيال.</p>
                 </div>
             </div>
 
-            <div class="movie-card">
-                <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?q=80&w=1000" class="movie-poster" alt="Movie Poster">
-                <div class="movie-info">
-                    <span class="movie-tag" id="m2-tag">تجريبي</span>
-                    <h3 class="movie-title" id="m2-title">أركيولوجيا الوجوه</h3>
-                    <p class="movie-desc" id="m2-desc">رحلة بصرية تعبر عن الحالات الوجودية بدون الحاجة إلى حوار لفظي.</p>
+            <div class="card">
+                <div class="card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?q=80&w=1000" alt="Film">
+                </div>
+                <div class="card-content">
+                    <span class="tag">سينما تجريبية</span>
+                    <h3>أركيولوجيا الوجوه</h3>
+                    <p>رحلة بصرية تعبر عن الحالات الوجودية بدون الحاجة إلى حوار لفظي.</p>
                 </div>
             </div>
 
-            <div class="movie-card">
-                <img src="https://images.unsplash.com/photo-1518676599625-5815021d902a?q=80&w=1000" class="movie-poster" alt="Movie Poster">
-                <div class="movie-info">
-                    <span class="movie-tag" id="m3-tag">وثائقي</span>
-                    <h3 class="movie-title" id="m3-title">المدينة العظمى</h3>
-                    <p class="movie-desc" id="m3-desc">رصد سينمائي للتحولات الاجتماعية والذاكرة العمرانية في بغداد.</p>
+            <div class="card">
+                <div class="card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1518676599625-5815021d902a?q=80&w=1000" alt="Film">
+                </div>
+                <div class="card-content">
+                    <span class="tag">فيلم وثائقي</span>
+                    <h3>المدينة العظمى</h3>
+                    <p>رصد سينمائي للتحولات الاجتماعية والذاكرة العمرانية والوجود البشري.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Director Portfolio. All Rights Reserved.</p>
+        <p>&copy; 2026 Zeki Yahya. All Rights Reserved.</p>
     </footer>
 
-    <script>
-        let currentLang = 'ar';
-
-        const translations = {
-            ar: {
-                navAbout: "عن المخرج",
-                navMovies: "الأفلام",
-                navAwards: "الجوائز",
-                heroTitle: "رؤية سينمائية عالمية",
-                heroSub: "إخراج وتأليف أفلام روائية ووثائقية حائزة على جوائز دولية",
-                heroBtn: "استعرض العرض الترويجي",
-                secMovies: "الأعمال السينمائية",
-                m1Tag: "روائي طويل",
-                m1Title: "صناعة الوهم",
-                m1Desc: "فيلم سينمائي يستعرض أعماق التجربة الإنسانية في صراع الواقع والخيال.",
-                m2Tag: "تجريبي",
-                m2Title: "أركيولوجيا الوجوه",
-                m2Desc: "رحلة بصرية تعبر عن الحالات الوجودية بدون الحاجة إلى حوار لفظي.",
-                m3Tag: "وثائقي",
-                m3Title: "المدينة العظمى",
-                m3Desc: "رصد سينمائي للتحولات الاجتماعية والذاكرة العمرانية في بغداد."
-            },
-            en: {
-                navAbout: "About",
-                navMovies: "Filmography",
-                navAwards: "Accolades",
-                heroTitle: "GLOBAL CINEMATIC VISION",
-                heroSub: "Directing award-winning feature films and documentaries worldwide",
-                heroBtn: "WATCH SHOWREEL",
-                secMovies: "FEATURED FILMS",
-                m1Tag: "Feature Film",
-                m1Title: "The Illusion Industry",
-                m1Desc: "A cinematic film exploring the human condition through reality and imagination.",
-                m2Tag: "Experimental",
-                m2Title: "Archaeology of Faces",
-                m2Desc: "A wordless visual journey capturing profound existential states.",
-                m3Tag: "Documentary",
-                m3Title: "The Great City",
-                m3Desc: "A documentary exploring social transformations and urban memory."
-            }
-        };
-
-        function toggleLanguage() {
-            currentLang = currentLang === 'ar' ? 'en' : 'ar';
-            
-            document.documentElement.lang = currentLang;
-            document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
-            document.querySelector('.lang-btn').innerText = currentLang === 'ar' ? 'EN' : 'AR';
-
-            const t = translations[currentLang];
-            document.getElementById('nav-about').innerText = t.navAbout;
-            document.getElementById('nav-movies').innerText = t.navMovies;
-            document.getElementById('nav-awards').innerText = t.navAwards;
-            document.getElementById('hero-title').innerText = t.heroTitle;
-            document.getElementById('hero-sub').innerText = t.heroSub;
-            document.getElementById('hero-btn').innerHTML = `<i class="fas fa-play"></i> ${t.heroBtn}`;
-            document.getElementById('sec-movies').innerText = t.secMovies;
-            
-            document.getElementById('m1-tag').innerText = t.m1Tag;
-            document.getElementById('m1-title').innerText = t.m1Title;
-            document.getElementById('m1-desc').innerText = t.m1Desc;
-
-            document.getElementById('m2-tag').innerText = t.m2Tag;
-            document.getElementById('m2-title').innerText = t.m2Title;
-            document.getElementById('m2-desc').innerText = t.m2Desc;
-
-            document.getElementById('m3-tag').innerText = t.m3Tag;
-            document.getElementById('m3-title').innerText = t.m3Title;
-            document.getElementById('m3-desc').innerText = t.m3Desc;
-        }
-    </script>
 </body>
 </html>
