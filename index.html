@@ -3,25 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zeki Yahya | Film Director & Author</title>
+    <title>CINE ARABIA | منصة السينما العربية العالمية</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@700;800&family=Tajawal:wght@300;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Tajawal:wght@300;500;700;900&display=swap" rel="stylesheet">
     
-    <!-- FontAwesome -->
+    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         :root {
-            --bg-color: #0c0c0e;
-            --surface: #16161a;
-            --primary: #ff3366;
-            --secondary: #7928ca;
-            --accent: #00dfd8;
-            --text-main: #ffffff;
-            --text-muted: #94a3b8;
+            --bg-deep: #070709;
+            --surface: #121216;
+            --primary: #D4AF37; /* ذهبي فاخر */
+            --accent: #E50914;  /* أحمر سينمائي */
+            --text-main: #FFFFFF;
+            --text-muted: #9CA3AF;
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         * {
@@ -32,76 +32,184 @@
         }
 
         body {
-            background-color: var(--bg-color);
+            background-color: var(--bg-deep);
             color: var(--text-main);
             overflow-x: hidden;
         }
 
+        /* Header & Nav */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: rgba(7, 7, 9, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .logo {
+            font-family: 'Cinzel', serif;
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: 2px;
+            text-decoration: none;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+        }
+
+        nav a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            padding: 6px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: var(--transition);
+        }
+
+        .lang-btn:hover {
+            background: var(--primary);
+            color: var(--bg-deep);
+        }
+
         /* Hero Section */
         .hero {
-            min-height: 100vh;
+            height: 95vh;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
             text-align: center;
             padding: 0 20px;
             position: relative;
-            background: radial-gradient(circle at 20% 30%, rgba(121, 40, 202, 0.15) 0%, transparent 40%),
-                        radial-gradient(circle at 80% 70%, rgba(255, 51, 102, 0.15) 0%, transparent 40%);
+            background: radial-gradient(circle at center, rgba(212, 175, 55, 0.08) 0%, rgba(7, 7, 9, 1) 70%),
+                        url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=2070') center/cover no-repeat;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(7, 7, 9, 0.75);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
         }
 
         .hero-badge {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            padding: 6px 20px;
-            border-radius: 50px;
-            font-size: 0.9rem;
+            display: inline-block;
+            background: rgba(212, 175, 55, 0.15);
+            color: var(--primary);
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-size: 0.85rem;
             font-weight: 700;
-            margin-bottom: 25px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 10px 20px rgba(255, 51, 102, 0.3);
+            margin-bottom: 20px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
         }
 
         .hero h1 {
-            font-size: clamp(2.5rem, 6vw, 5rem);
-            font-weight: 900;
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            font-weight: 800;
             margin-bottom: 20px;
             line-height: 1.2;
-            background: linear-gradient(to right, #fff, var(--text-muted));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: #fff;
         }
 
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             color: var(--text-muted);
-            max-width: 600px;
-            margin-bottom: 40px;
+            margin-bottom: 35px;
             line-height: 1.6;
         }
 
-        /* Gallery Grid */
-        .gallery-section {
+        .search-bar {
+            display: flex;
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 50px;
+            padding: 8px;
+            max-width: 600px;
+            margin: 0 auto;
+            backdrop-filter: blur(10px);
+        }
+
+        .search-bar input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            padding: 12px 20px;
+            color: #fff;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .search-bar button {
+            background: var(--primary);
+            color: var(--bg-deep);
+            border: none;
+            padding: 12px 30px;
+            border-radius: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .search-bar button:hover {
+            opacity: 0.9;
+            transform: scale(1.02);
+        }
+
+        /* Sections */
+        .section {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 80px 20px;
+            padding: 100px 20px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 40px;
         }
 
         .section-title {
-            font-size: 2.2rem;
-            font-weight: 900;
-            margin-bottom: 40px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
+            font-family: 'Cinzel', serif;
+            font-size: 2rem;
+            color: #fff;
         }
 
         .section-title span {
             color: var(--primary);
         }
 
+        /* Grid Layout */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -110,127 +218,215 @@
 
         .card {
             background: var(--surface);
-            border-radius: 20px;
+            border-radius: 16px;
             overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: var(--transition);
         }
 
         .card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-8px);
             border-color: var(--primary);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
         }
 
-        .card-img-wrapper {
-            height: 280px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .card-img-wrapper img {
+        .card-img {
+            height: 380px;
             width: 100%;
-            height: 100%;
             object-fit: cover;
-            transition: transform 0.6s ease;
         }
 
-        .card:hover .card-img-wrapper img {
-            transform: scale(1.08);
-        }
-
-        .card-content {
+        .card-body {
             padding: 25px;
         }
 
-        .tag {
-            display: inline-block;
-            padding: 4px 12px;
-            background: rgba(0, 223, 216, 0.1);
-            color: var(--accent);
-            border-radius: 8px;
-            font-size: 0.8rem;
-            font-weight: 700;
+        .meta-tags {
+            display: flex;
+            gap: 10px;
             margin-bottom: 12px;
         }
 
+        .tag {
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--primary);
+            padding: 3px 10px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
         .card h3 {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             margin-bottom: 10px;
         }
 
         .card p {
             color: var(--text-muted);
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             line-height: 1.6;
         }
 
         /* Footer */
         footer {
+            background: #040405;
+            padding: 60px 20px 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
             text-align: center;
-            padding: 50px 20px;
-            background: #08080a;
             color: var(--text-muted);
-            border-top: 1px solid rgba(255, 255, 255,.05);
-            margin-top: 80px;
         }
 
         @media (max-width: 768px) {
-            .grid { grid-template-columns: 1fr; }
+            header { padding: 15px 20px; }
+            nav ul { display: none; }
+            .hero h1 { font-size: 2.3rem; }
         }
     </style>
 </head>
 <body>
 
+    <header>
+        <a href="#" class="logo">CINE ARABIA</a>
+        <nav>
+            <ul>
+                <li><a href="#" id="nav-movies">الأفلام</a></li>
+                <li><a href="#" id="nav-directors">المخرجون</a></li>
+                <li><a href="#" id="nav-festivals">المهرجانات</a></li>
+                <li><a href="#" id="nav-about">عن المنصة</a></li>
+            </ul>
+        </nav>
+        <button class="lang-db lang-btn" onclick="toggleLanguage()">EN</button>
+    </header>
+
     <section class="hero">
-        <div class="hero-badge">مخرج سينمائي وباحث</div>
-        <h1>رؤية بصرية تتجاوز المألوف</h1>
-        <p>استكشاف الأعماق الوجودية والجمالية من خلال سرد بصري تجريبي وروائي يلامس الروح.</p>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="hero-badge" id="hero-badge">المرجع السينمائي الموثق</span>
+            <h1 id="hero-title">الذاكرة السينمائية العربية بمعايير عالمية</h1>
+            <p id="hero-sub">قاعدة البيانات الأولى الموثقة بالمعرفات الدولية (ISNI & Wikidata) لأرشفة الأفلام وصناع السينما.</p>
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="ابحث عن فيلم، مخرج، أو مهرجان...">
+                <button id="search-btn">بحث</button>
+            </div>
+        </div>
     </section>
 
-    <section class="gallery-section">
-        <h2 class="section-title">أبرز <span>الأعمال</span></h2>
-        
+    <section class="section">
+        <div class="section-header">
+            <h2 class="section-title" id="sec-title">أبرز الأعمال <span>الموثقة</span></h2>
+        </div>
         <div class="grid">
             <div class="card">
-                <div class="card-img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=1000" alt="Film">
-                </div>
-                <div class="card-content">
-                    <span class="tag">روائي طويل</span>
-                    <h3>صناعة الوهم</h3>
-                    <p>فيلم سينمائي يستعرض أعماق التجربة الإنسانية في صراع الواقع والخيال.</p>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?q=80&w=1000" alt="Film">
-                </div>
-                <div class="card-content">
-                    <span class="tag">سينما تجريبية</span>
-                    <h3>أركيولوجيا الوجوه</h3>
-                    <p>رحلة بصرية تعبر عن الحالات الوجودية بدون الحاجة إلى حوار لفظي.</p>
+                <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=1000" class="card-img" alt="Film">
+                <div class="card-body">
+                    <div class="meta-tags">
+                        <span class="tag">روائي طويل</span>
+                        <span class="tag">ISNI Verified</span>
+                    </div>
+                    <h3 id="m1-title">صناعة الوهم</h3>
+                    <p id="m1-desc">فيلم سينمائي يستعرض أعماق التجربة الإنسانية في صراع الواقع والخيال ضمن معايير بصرية فريدة.</p>
                 </div>
             </div>
 
             <div class="card">
-                <div class="card-img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1518676599625-5815021d902a?q=80&w=1000" alt="Film">
+                <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?q=80&w=1000" class="card-img" alt="Film">
+                <div class="card-body">
+                    <div class="meta-tags">
+                        <span class="tag">سينما تجريبية</span>
+                        <span class="tag">Wikidata Linked</span>
+                    </div>
+                    <h3 id="m2-title">أركيولوجيا الوجوه</h3>
+                    <p id="m2-desc">رحلة بصرية تجريبية تعبر عن الحالات الوجودية بدون الحاجة إلى حوار لفظي تقليدي.</p>
                 </div>
-                <div class="card-content">
-                    <span class="tag">فيلم وثائقي</span>
-                    <h3>المدينة العظمى</h3>
-                    <p>رصد سينمائي للتحولات الاجتماعية والذاكرة العمرانية والوجود البشري.</p>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1518676599625-5815021d902a?q=80&w=1000" class="card-img" alt="Film">
+                <div class="card-body">
+                    <div class="meta-tags">
+                        <span class="tag">فيلم وثائقي</span>
+                        <span class="tag">Global Archive</span>
+                    </div>
+                    <h3 id="m3-title">المدينة العظمى</h3>
+                    <p id="m3-desc">رصد سينمائي وثائقي للتحولات الاجتماعية والذاكرة العمرانية والوجود البشري في بغداد.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Zeki Yahya. All Rights Reserved.</p>
+        <p id="footer-text">&copy; 2026 Cine Arabia Platform. All Rights Reserved. Powered by Open Cinema Standards.</p>
     </footer>
 
+    <script>
+        let currentLang = 'ar';
+
+        const dict = {
+            ar: {
+                navMovies: "الأفلام",
+                navDirectors: "المخرجون",
+                navFestivals: "المهرجانات",
+                navAbout: "عن المنصة",
+                heroBadge: "المرجع السينمائي الموثق",
+                heroTitle: "الذاكرة السينمائية العربية بمعايير عالمية",
+                heroSub: "قاعدة البيانات الأولى الموثقة بالمعرفات الدولية (ISNI & Wikidata) لأرشفة الأفلام وصناع السينما.",
+                searchPlaceholder: "ابحث عن فيلم، مخرج، أو مهرجان...",
+                searchBtn: "بحث",
+                secTitle: "أبرز الأعمال الموثقة",
+                m1Title: "صناعة الوهم",
+                m1Desc: "فيلم سينمائي يستعرض أعماق التجربة الإنسانية في صراع الواقع والخيال ضمن معايير بصرية فريدة.",
+                m2Title: "أركيولوجيا الوجوه",
+                m2Desc: "رحلة بصرية تجريبية تعبر عن الحالات الوجودية بدون الحاجة إلى حوار لفظي تقليدي.",
+                m3Title: "المدينة العظمى",
+                m3Desc: "رصد سينمائي وثائقي للتحولات الاجتماعية والذاكرة العمرانية والوجود البشري في بغداد.",
+                footerText: "&copy; 2026 منصة السينما العربية. جميع الحقوق محفوظة. مدعومة بمعايير الأرشفة العالمية."
+            },
+            en: {
+                navMovies: "Films",
+                navDirectors: "Filmmakers",
+                navFestivals: "Festivals",
+                navAbout: "About",
+                heroBadge: "Verified Cinematic Registry",
+                heroTitle: "Arab Cinema Memory with Global Standards",
+                heroSub: "The premier verified database utilizing international authority identifiers (ISNI & Wikidata) for films and creators.",
+                searchPlaceholder: "Search film, director, or festival...",
+                searchBtn: "Search",
+                secTitle: "Featured Verified Works",
+                m1Title: "The Illusion Industry",
+                m1Desc: "A cinematic film exploring the human condition through reality and imagination with unique visual criteria.",
+                m2Title: "Archaeology of Faces",
+                m2Desc: "An experimental visual journey capturing profound existential states without traditional dialogue.",
+                m3Title: "The Great City",
+                m3Desc: "A documentary exploring social transformations and urban memory in Baghdad.",
+                footerText: "&copy; 2026 Cine Arabia Platform. All Rights Reserved. Powered by Open Cinema Standards."
+            }
+        };
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'ar' ? 'en' : 'ar';
+            document.documentElement.lang = currentLang;
+            document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+            document.querySelector('.lang-btn').innerText = currentLang === 'ar' ? 'EN' : 'AR';
+
+            const t = dict[currentLang];
+            document.getElementById('nav-movies').innerText = t.navMovies;
+            document.getElementById('nav-directors').innerText = t.navDirectors;
+            document.getElementById('nav-festivals').innerText = t.navFestivals;
+            document.getElementById('nav-about').innerText = t.navAbout;
+            document.getElementById('hero-badge').innerText = t.heroBadge;
+            document.getElementById('hero-title').innerText = t.heroTitle;
+            document.getElementById('hero-sub').innerText = t.heroSub;
+            document.getElementById('search-input').placeholder = t.searchPlaceholder;
+            document.getElementById('search-btn').innerText = t.searchBtn;
+            document.getElementById('sec-title').innerHTML = currentLang === 'ar' ? 'أبرز الأعمال <span>الموثقة</span>' : 'Featured <span>Verified Works</span>';
+            
+            document.getElementById('m1-title').innerText = t.m1Title;
+            document.getElementById('m1-desc').innerText = t.m1Desc;
+            document.getElementById('m2-title').innerText = t.m2Title;
+            document.getElementById('m2-desc').innerText = t.m2Desc;
+            document.getElementById('m3-title').innerText = t.m3Title;
+            document.getElementById('m3-desc').innerText = t.m3Desc;
+            document.getElementById('footer-text').innerHTML = t.footerText;
+        }
+    </script>
 </body>
 </html>
