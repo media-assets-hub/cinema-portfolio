@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CINE ARABIA | الموسوعة السينمائية المعتمدة</title>
+    <title>CINE FESTIVAL | مهرجان السينما الرقمي الدولي</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,17 +15,16 @@
 
     <style>
         :root {
-            --bg-main: #121316;
-            --surface: #1C1E24;
-            --surface-subtle: #252830;
-            --primary: #C59B27; /* ذهبي دافئ ومشرق */
-            --primary-dark: #9A771C;
+            --bg-main: #0B0B0E;
+            --surface: #14151B;
+            --surface-subtle: #1E2029;
+            --primary: #D4AF37; /* ذهبي المهرجانات */
+            --primary-light: #F3E5AB;
             --accent-red: #E50914;
-            --text-main: #F3F4F6;
+            --text-main: #F9FAFB;
             --text-muted: #9CA3AF;
-            --border-color: #2E323D;
-            --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.25);
-            --shadow-lg: 0 15px 35px rgba(0, 0, 0, 0.45);
+            --border-color: #272A36;
+            --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.6);
             --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
@@ -42,24 +41,24 @@
             line-height: 1.6;
         }
 
-        /* Header & Navigation */
+        /* Header Navigation */
         header {
             position: fixed;
             top: 0;
             width: 100%;
-            padding: 15px 50px;
+            padding: 18px 50px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             z-index: 1000;
-            background: rgba(28, 30, 36, 0.92);
+            background: rgba(11, 11, 14, 0.9);
             backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border-color);
         }
 
         .logo {
             font-family: 'Cinzel', serif;
-            font-size: 1.7rem;
+            font-size: 1.6rem;
             font-weight: 900;
             color: var(--primary);
             letter-spacing: 2px;
@@ -94,180 +93,134 @@
         }
 
         .lang-btn {
-            background: var(--surface);
-            border: 1px solid var(--border-color);
-            color: var(--text-main);
-            padding: 7px 18px;
+            background: transparent;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            padding: 6px 18px;
             border-radius: 20px;
             cursor: pointer;
             font-weight: bold;
             transition: var(--transition);
-            box-shadow: var(--shadow-sm);
         }
 
         .lang-btn:hover {
-            border-color: var(--primary);
-            color: var(--primary);
+            background: var(--primary);
+            color: var(--bg-main);
         }
 
-        .submit-btn {
-            background: var(--primary);
-            color: #121316;
+        .submit-film-btn {
+            background: linear-gradient(135deg, var(--primary), #B8860B);
+            color: #000;
             border: none;
-            padding: 8px 20px;
+            padding: 8px 22px;
             border-radius: 20px;
-            font-weight: bold;
+            font-weight: 800;
             cursor: pointer;
             transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
         }
 
-        .submit-btn:hover {
-            background: var(--primary-dark);
-            color: white;
+        .submit-film-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
         }
 
-        /* Hero Section */
+        /* Hero Banner */
         .hero {
-            padding: 160px 20px 80px;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            background: radial-gradient(circle at 50% 20%, rgba(197, 155, 39, 0.08) 0%, var(--bg-main) 80%);
-            border-bottom: 1px solid var(--border-color);
+            padding: 120px 20px 60px;
+            position: relative;
+            background: radial-gradient(circle at center, rgba(212, 175, 55, 0.12) 0%, var(--bg-main) 75%),
+                        url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=2070') center/cover no-repeat;
         }
 
-        .hero-badge {
+        .hero-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(11, 11, 14, 0.8);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 850px;
+        }
+
+        .festival-edition {
             display: inline-block;
-            background: rgba(197, 155, 39, 0.12);
+            background: rgba(212, 175, 55, 0.15);
             color: var(--primary);
-            padding: 6px 20px;
+            padding: 6px 22px;
             border-radius: 30px;
-            font-size: 0.85rem;
-            font-weight: 700;
+            font-size: 0.9rem;
+            font-weight: 800;
             margin-bottom: 20px;
-            border: 1px solid rgba(197, 155, 39, 0.25);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            letter-spacing: 1px;
         }
 
         .hero h1 {
             font-family: 'Cinzel', serif;
-            font-size: clamp(2.3rem, 5vw, 4rem);
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
             font-weight: 900;
             color: #FFFFFF;
             margin-bottom: 20px;
-            line-height: 1.2;
+            line-height: 1.15;
+            text-transform: uppercase;
         }
 
         .hero p {
-            font-size: 1.15rem;
+            font-size: 1.2rem;
             color: var(--text-muted);
-            max-width: 750px;
-            margin: 0 auto 35px;
+            margin-bottom: 40px;
         }
 
-        /* Search Bar */
-        .search-container {
-            max-width: 700px;
-            margin: 0 auto;
-            background: var(--surface);
-            border: 1px solid var(--border-color);
-            border-radius: 50px;
-            padding: 8px;
-            display: flex;
-            box-shadow: var(--shadow-lg);
-        }
-
-        .search-container input {
-            flex: 1;
-            border: none;
-            background: transparent;
-            padding: 12px 25px;
-            font-size: 1rem;
-            outline: none;
-            color: #FFFFFF;
-        }
-
-        .search-container button {
-            background: var(--primary);
-            color: #121316;
-            border: none;
-            padding: 12px 30px;
-            border-radius: 40px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .search-container button:hover {
-            background: var(--primary-dark);
-            color: white;
-        }
-
-        /* Categories Filter */
-        .categories {
+        .hero-stats {
             display: flex;
             justify-content: center;
-            gap: 15px;
-            margin-top: 40px;
+            gap: 40px;
             flex-wrap: wrap;
+            margin-top: 30px;
         }
 
-        .cat-btn {
-            background: var(--surface);
-            border: 1px solid var(--border-color);
-            padding: 8px 22px;
-            border-radius: 25px;
-            font-size: 0.9rem;
-            font-weight: 600;
+        .stat-item h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.2rem;
+            color: var(--primary);
+        }
+
+        .stat-item p {
+            font-size: 0.85rem;
             color: var(--text-muted);
-            cursor: pointer;
-            transition: var(--transition);
+            margin-bottom: 0;
         }
 
-        .cat-btn:hover, .cat-btn.active {
-            background: var(--primary);
-            color: #121316;
-            border-color: var(--primary);
-        }
-
-        /* Grid Section */
+        /* Categories Section */
         .main-container {
             max-width: 1250px;
             margin: 0 auto;
-            padding: 70px 20px;
+            padding: 80px 20px;
         }
 
         .section-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 35px;
+            text-align: center;
+            margin-bottom: 50px;
         }
 
         .section-title {
-            font-size: 1.8rem;
-            font-weight: 900;
+            font-family: 'Cinzel', serif;
+            font-size: 2.2rem;
             color: #FFFFFF;
-            position: relative;
-            padding-right: 15px;
+            margin-bottom: 10px;
         }
 
-        html[dir="ltr"] .section-title {
-            padding-right: 0;
-            padding-left: 15px;
-        }
-
-        .section-title::before {
-            content: '';
-            position: absolute;
-            right: 0;
-            top: 15%;
-            height: 70%;
-            width: 4px;
-            background: var(--primary);
-            border-radius: 4px;
-        }
-
-        html[dir="ltr"] .section-title::before {
-            right: auto;
-            left: 0;
+        .section-subtitle {
+            color: var(--text-muted);
+            font-size: 1rem;
         }
 
         .grid {
@@ -276,120 +229,87 @@
             gap: 30px;
         }
 
-        /* Cards */
-        .card {
+        .category-card {
+            background: var(--surface);
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            padding: 30px 25px;
+            text-align: center;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .category-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .category-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .category-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            color: #FFF;
+        }
+
+        .category-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        /* Featured Jury & Guests */
+        .jury-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .jury-card {
             background: var(--surface);
             border-radius: 16px;
             border: 1px solid var(--border-color);
             overflow: hidden;
-            box-shadow: var(--shadow-sm);
-            transition: var(--transition);
-            cursor: pointer;
-            display: flex;
-            flex-direction: column;
+            text-align: center;
         }
 
-        .card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--primary);
-        }
-
-        .card-img-wrapper {
-            position: relative;
-            height: 360px;
-            overflow: hidden;
-            background: var(--surface-subtle);
-        }
-
-        .card-img-wrapper img {
+        .jury-img {
             width: 100%;
-            height: 100%;
+            height: 280px;
             object-fit: cover;
-            transition: transform 0.5s ease;
         }
 
-        .card:hover .card-img-wrapper img {
-            transform: scale(1.05);
-        }
-
-        .card-badge {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: rgba(18, 19, 22, 0.85);
-            color: var(--primary);
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(197, 155, 39, 0.3);
-        }
-
-        html[dir="ltr"] .card-badge {
-            right: auto;
-            left: 15px;
-        }
-
-        .card-body {
+        .jury-body {
             padding: 20px;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
         }
 
-        .card-title {
-            font-size: 1.25rem;
-            font-weight: 800;
-            margin-bottom: 8px;
-            color: #FFFFFF;
+        .jury-body h3 {
+            font-size: 1.2rem;
+            color: #FFF;
+            margin-bottom: 5px;
         }
 
-        .card-meta {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-bottom: 12px;
-            display: flex;
-            gap: 12px;
-        }
-
-        .card-desc {
-            font-size: 0.9rem;
-            color: #D1D5DB;
-            line-height: 1.5;
-            margin-bottom: 15px;
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
-
-        .authority-tags {
-            margin-top: auto;
-            padding-top: 12px;
-            border-top: 1px solid var(--border-color);
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
-
-        .auth-tag {
-            font-size: 0.7rem;
-            padding: 3px 8px;
-            background: var(--surface-subtle);
+        .jury-body span {
             color: var(--primary);
-            border-radius: 6px;
-            font-weight: 600;
-            border: 1px solid rgba(197, 155, 39, 0.2);
+            font-size: 0.85rem;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 10px;
         }
 
-        /* Modal */
+        /* Submit Form Modal */
         .modal {
             display: none;
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.75);
+            background: rgba(0, 0, 0, 0.8);
             backdrop-filter: blur(8px);
             z-index: 2000;
             justify-content: center;
@@ -401,105 +321,58 @@
             background: var(--surface);
             border: 1px solid var(--border-color);
             width: 100%;
-            max-width: 800px;
+            max-width: 600px;
             border-radius: 20px;
-            overflow: hidden;
-            box-shadow: var(--shadow-lg);
+            padding: 35px;
             position: relative;
-            animation: modalUp 0.3s ease;
-        }
-
-        @keyframes modalUp {
-            from { transform: translateY(30px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
         }
 
         .modal-close {
             position: absolute;
-            top: 15px; right: 20px;
+            top: 20px; left: 20px;
             font-size: 1.5rem;
+            color: var(--text-muted);
             cursor: pointer;
+        }
+
+        html[dir="rtl"] .modal-close {
+            left: auto; right: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: right;
+        }
+
+        html[dir="ltr"] .form-group {
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.9rem;
             color: var(--text-muted);
-            z-index: 10;
+            margin-bottom: 8px;
         }
 
-        html[dir="ltr"] .modal-close {
-            right: auto; left: 20px;
-        }
-
-        .modal-body {
-            padding: 30px;
-            display: grid;
-            grid-template-columns: 260px 1fr;
-            gap: 25px;
-        }
-
-        .modal-img {
+        .form-group input, .form-group select, .form-group textarea {
             width: 100%;
-            border-radius: 12px;
-            object-fit: cover;
-            height: 360px;
-        }
-
-        .modal-info h2 {
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-            color: #FFFFFF;
-        }
-
-        .modal-info p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 12px;
-        }
-
-        .modal-links {
-            display: flex;
-            gap: 10px;
-            margin-top: 20px;
-            flex-wrap: wrap;
-        }
-
-        .modal-btn {
-            padding: 8px 18px;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-            text-decoration: none;
-            color: var(--text-main);
-            font-size: 0.85rem;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 6px;
             background: var(--surface-subtle);
-            transition: var(--transition);
-        }
-
-        .modal-btn:hover {
-            background: var(--primary);
-            color: #121316;
-            border-color: var(--primary);
+            border: 1px solid var(--border-color);
+            padding: 12px 15px;
+            border-radius: 10px;
+            color: #FFF;
+            outline: none;
         }
 
         /* Footer */
         footer {
-            background: #0E0F12;
+            background: #060608;
             border-top: 1px solid var(--border-color);
             padding: 50px 20px 30px;
             text-align: center;
             color: var(--text-muted);
             margin-top: 80px;
-        }
-
-        footer p {
-            font-size: 0.9rem;
-        }
-
-        @media (max-width: 768px) {
-            header { padding: 15px 20px; }
-            nav ul { display: none; }
-            .modal-body { grid-template-columns: 1fr; }
-            .modal-img { height: 250px; }
         }
     </style>
 </head>
@@ -508,194 +381,233 @@
     <!-- Header Navigation -->
     <header>
         <a href="#" class="logo">
-            <i class="fas fa-film"></i> CINE ARABIA
+            <i class="fas fa-trophy"></i> CINE FESTIVAL
         </a>
         <nav>
             <ul>
-                <li><a href="#films" class="active" id="nav-films">الأفلام</a></li>
-                <li><a href="#directors" id="nav-directors">دليل الصناع</a></li>
-                <li><a href="#festivals" id="nav-festivals">المهرجانات والجوائز</a></li>
-                <li><a href="#about" id="nav-about">عن الموسوعة</a></li>
+                <li><a href="#about" id="nav-about">عن المهرجان</a></li>
+                <li><a href="#categories" id="nav-categories">مسابقات المهرجان</a></li>
+                <li><a href="#jury" id="nav-jury">لجنة التحكيم</a></li>
+                <li><a href="#awards" id="nav-awards">الجوائز</a></li>
             </ul>
         </nav>
         <div class="header-actions">
-            <button class="lang-btn" onclick="toggleLanguage()">English</button>
-            <button class="submit-btn" id="btn-submit">توثيق عمل</button>
+            <button class="lang-btn" onclick="toggleLanguage()">EN</button>
+            <button class="submit-film-btn" onclick="openModal()" id="btn-submit-hero">تقديم فيلمك الان</button>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
-        <span class="hero-badge" id="hero-badge">الأرشيف السينمائي الرقمي المعترف به دولياً</span>
-        <h1 id="hero-title">المرجع الأول للصناعة السينمائية العربية والعالمية</h1>
-        <p id="hero-sub">قاعدة بيانات مفتوحة توثق المخرجين، الأفلام، والجوائز العالمية وفق أعلى معايير الأرشفة الدولية والمعرفات المعتمدة (ISNI & Wikidata & IMDb).</p>
-        
-        <div class="search-container">
-            <input type="text" id="search-input" placeholder="ابحث عن اسم فيلم، مخرج (مثل مارتن سكورزيزي)، أو ممثل (مثل ميريل ستريب)...">
-            <button id="search-btn"><i class="fas fa-search"></i> <span id="search-text">بحث</span></button>
-        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="festival-edition" id="hero-badge">الدورة الأولى الرقمية العالمية • 2026</span>
+            <h1 id="hero-title">مهرجان السينما الرقمي الدولي</h1>
+            <p id="hero-sub">منصة عالمية تحتفي بإبداعات المخرجين والصناع مستقلين وعالميين في كافة الفئات السينمائية.</p>
+            
+            <div style="display: flex; gap: 15px; justify-content: center;">
+                <button class="submit-film-btn" style="padding: 12px 35px; font-size: 1rem;" onclick="openModal()" id="hero-btn-primary">ارسل فيلمك للمشاركة</button>
+            </div>
 
-        <div class="categories">
-            <button class="cat-btn active" onclick="filterCategory('all', this)">الكل</button>
-            <button class="cat-btn" onclick="filterCategory('feature', this)">أفلام روائية</button>
-            <button class="cat-btn" onclick="filterCategory('director', this)">دليل المخرجين</button>
-            <button class="cat-btn" onclick="filterCategory('actor', this)">دليل الممثلين</button>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <h3>$50,000</h3>
+                    <p id="stat-awards">مجموع الجوائز</p>
+                </div>
+                <div class="stat-item">
+                    <h3>4</h3>
+                    <p id="stat-cats">مسابقات رسمية</p>
+                </div>
+                <div class="stat-item">
+                    <h3>100%</h3>
+                    <p id="stat-digital">عروض رقمية عالمية</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Main Content Layout -->
-    <main class="main-container">
-        
+    <!-- Categories Section -->
+    <main class="main-container" id="categories">
         <div class="section-header">
-            <h2 class="section-title" id="sec-title">الأعمال والسجلات الموثقة</h2>
+            <h2 class="section-title" id="cat-title">مسابقات المهرجان الرسمية</h2>
+            <p class="section-subtitle" id="cat-sub">نستقبل المشاركات السينمائية من جميع أنحاء العالم في أربع فئات رئيسية</p>
         </div>
 
-        <div class="grid" id="content-grid">
-            
-            <!-- Card 1: Director Martin Scorsese -->
-            <div class="card" data-cat="director" onclick="openModal('مارتن سكورزيزي (Martin Scorsese)', 'مخرج ومنتج سينمائي عالمي', 'أحد أعظم المخرجين في تاريخ السينما العالمية، حائز على جائزة الأوسكار وجائزة السعفة الذهبية، ومؤسس مؤسسة السينما للحفاظ على التراث السينمائي العالمي.', 'https://images.unsplash.com/photo-1518676599625-5815021d902a?q=80&w=1000', 'الولايات المتحدة', 'ISNI: 0000 0001 2144 0938 | Wikidata: Q41148')">
-                <div class="card-img-wrapper">
-                    <span class="card-badge">مخرج عالمي</span>
-                    <img src="https://images.unsplash.com/photo-1518676599625-5815021d902a?q=80&w=1000" alt="Martin Scorsese">
-                </div>
-                <div class="card-body">
-                    <h3 class="card-title">مارتن سكورزيزي</h3>
-                    <div class="card-meta">
-                        <span><i class="fas fa-film"></i> 26 فيلم روائي</span>
-                        <span><i class="fas fa-trophy"></i> أوسكار / السعفة الذهبية</span>
-                    </div>
-                    <p class="card-desc">أحد أعظم المخرجين في تاريخ السينما العالمية، حائز على جائزة الأوسكار وتتميز أعماله بالرؤية البصرية العميقة والواقعية.</p>
-                    <div class="authority-tags">
-                        <span class="auth-tag">ISNI Verified</span>
-                        <span class="auth-tag">Wikidata</span>
-                        <span class="auth-tag">IMDb ID: nm0000217</span>
-                    </div>
+        <div class="grid">
+            <div class="category-card">
+                <i class="fas fa-film category-icon"></i>
+                <h3 id="c1-title">الأفلام الروائية الطويلة</h3>
+                <p id="c1-desc">المسابقة الرسمية للأفلام الروائية الطويلة التي تتجاوز 60 دقيقة ذات الرؤية البصرية والتعبيرية العميقة.</p>
+            </div>
+
+            <div class="category-card">
+                <i class="fas fa-video category-icon"></i>
+                <h3 id="c2-title">الأفلام الوثائقية</h3>
+                <p id="c2-desc">الأعمال الوثائقية التي تسلط الضوء على القضايا الإنسانية، التحولات الاجتماعية، والذاكرة العمرانية.</p>
+            </div>
+
+            <div class="category-card">
+                <i class="fas fa-brain category-icon"></i>
+                <h3 id="c3-title">السينما التجريبية والفن البصري</h3>
+                <p id="c3-desc">الأعمال البصرية التي تتجاوز السرد التقليدي، معتمدة على اللغة البصرية والمؤثرات الحسية الحرة.</p>
+            </div>
+
+            <div class="category-card">
+                <i class="fas fa-stopwatch category-icon"></i>
+                <h3 id="c4-title">الأفلام القصيرة</h3>
+                <p id="c4-desc">المسابقة المخصصة للأفلام القصيرة (أقل من 30 دقيقة) للمخرجين والمبدعين المستقلين.</p>
+            </div>
+        </div>
+
+        <!-- Jury Section -->
+        <div class="section-header" style="margin-top: 90px;" id="jury">
+            <h2 class="section-title" id="jury-title">لجنة التحكيم الدولية</h2>
+            <p class="section-subtitle" id="jury-sub">نخبة من صناع السينما والمخرجين والنقاد المعترف بهم دولياً</p>
+        </div>
+
+        <div class="jury-grid">
+            <div class="jury-card">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000" class="jury-img" alt="Jury">
+                <div class="jury-body">
+                    <h3>زكي يحيى</h3>
+                    <span id="j1-role">رئيس لجنة التحكيم • مخرج وباحث</span>
                 </div>
             </div>
 
-            <!-- Card 2: Movie Taxi Driver (Scorsese) -->
-            <div class="card" data-cat="feature" onclick="openModal('سائق التاكسي (Taxi Driver)', 'روائي طويل (1976)', 'فيلم دراما سينمائي من إخراج مارتن سكورزيزي، حائز على السعفة الذهبية في مهرجان كان السينمائي ويعتبر تحفة سينمائية خالدة.', 'https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=1000', 'مارتن سكورزيزي', 'IMDb: tt0075314 | Cannes Palme d\'Or')">
-                <div class="card-img-wrapper">
-                    <span class="card-badge">روائي طويل</span>
-                    <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=1000" alt="Taxi Driver">
-                </div>
-                <div class="card-body">
-                    <h3 class="card-title">سائق التاكسي</h3>
-                    <div class="card-meta">
-                        <span><i class="far fa-calendar-alt"></i> 1976</span>
-                        <span><i class="far fa-clock"></i> 114 دقيقة</span>
-                    </div>
-                    <p class="card-desc">تحفة سينمائية حائزة على السعفة الذهبية في مهرجان كان، تستعرض عزلة الفرد وصراعه مع المدينة.</p>
-                    <div class="authority-tags">
-                        <span class="auth-tag">Palme d'Or Winner</span>
-                        <span class="auth-tag">Wikidata Linked</span>
-                    </div>
+            <div class="jury-card">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1000" class="jury-img" alt="Jury">
+                <div class="jury-body">
+                    <h3>سارة كولمان</h3>
+                    <span id="j2-role">ناقدة سينمائية • ألمانيا</span>
                 </div>
             </div>
 
-            <!-- Card 3: Actress Meryl Streep -->
-            <div class="card" data-cat="actor" onclick="openModal('ميريل ستريب (Meryl Streep)', 'ممثلة عالمية - حائزة على 3 جوائز أوسكار', 'تُعتبر من أعظم الممثلات في تاريخ السينما، رُشحت لـ 21 جائزة أوسكار وحصلت على 3 منها، وتشتهر بتنوع أدوارها الاستثنائي.', 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000', 'الولايات المتحدة', 'ISNI: 0000 0001 2148 1087 | Wikidata: Q873')">
-                <div class="card-img-wrapper">
-                    <span class="card-badge" style="background: var(--primary); color: #121316;">ممثلة موثقة</span>
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000" alt="Meryl Streep">
-                </div>
-                <div class="card-body">
-                    <h3 class="card-title">ميريل ستريب</h3>
-                    <div class="card-meta">
-                        <span><i class="fas fa-award"></i> 21 ترشيح أوسكار</span>
-                        <span><i class="fas fa-trophy"></i> 3 جوائز أوسكار</span>
-                    </div>
-                    <p class="card-desc">تُعتبر من أعظم الممثلات في تاريخ السينما، رُشحت لـ 21 جائزة أوسكار وحصلت على 3 منها وتتميز بالبراعة الأسلوبية.</p>
-                    <div class="authority-tags">
-                        <span class="auth-tag">ISNI Verified</span>
-                        <span class="auth-tag">Wikidata</span>
-                        <span class="auth-tag">IMDb ID: nm0000658</span>
-                    </div>
+            <div class="jury-card">
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1000" class="jury-img" alt="Jury">
+                <div class="jury-body">
+                    <h3>جان لوك دو بونت</h3>
+                    <span id="j3-role">منتج سينمائي • فرنسا</span>
                 </div>
             </div>
-
-            <!-- Card 4: Movie Raging Bull (Scorsese & De Niro) -->
-            <div class="card" data-cat="feature" onclick="openModal('الثور الثائر (Raging Bull)', 'روائي طويل (1980)', 'فيلم سيرة ذاتية ورياضة بالأبيض والأسود من إخراج مارتن سكورزيزي، يعتبر من أفضل الأفلام في تاريخ السينما الأمريكية.', 'https://images.unsplash.com/photo-1478720568477-152d9b164e26?q=80&w=1000', 'مارتن سكورزيزي', 'Academy Award Winner | Wikidata: Q190071')">
-                <div class="card-img-wrapper">
-                    <span class="card-badge">روائي طويل</span>
-                    <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?q=80&w=1000" alt="Raging Bull">
-                </div>
-                <div class="card-body">
-                    <h3 class="card-title">الثور الثائر</h3>
-                    <div class="card-meta">
-                        <span><i class="far fa-calendar-alt"></i> 1980</span>
-                        <span><i class="far fa-clock"></i> 129 دقيقة</span>
-                    </div>
-                    <p class="card-desc">تحفة درامية بالأبيض والأسود تسلط الضوء على الصراع الداخلي والنفسي لشخصية جيك لاموتا.</p>
-                    <div class="authority-tags">
-                        <span class="auth-tag">Oscar Winner</span>
-                        <span class="auth-tag">Wikidata</span>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </main>
 
-    <!-- Modal Popup -->
-    <div class="modal" id="info-modal">
+    <!-- Submission Modal -->
+    <div class="modal" id="submit-modal">
         <div class="modal-content">
             <span class="modal-close" onclick="closeModal()">&times;</span>
-            <div class="modal-body">
-                <img src="" id="modal-img" class="modal-img" alt="Poster">
-                <div class="modal-info">
-                    <h2 id="modal-title">عنوان العمل</h2>
-                    <p id="modal-meta" style="color: var(--primary); font-weight: bold;"></p>
-                    <p id="modal-desc">تفاصيل العمل والتوصيف السينمائي...</p>
-                    <p><strong>المخرج / المبدع:</strong> <span id="modal-director"></span></p>
-                    <p><strong>التوثيق الرقمي:</strong> <span id="modal-auth"></span></p>
-
-                    <div class="modal-links">
-                        <a href="#" class="modal-btn"><i class="fab fa-imdb"></i> IMDb Profile</a>
-                        <a href="#" class="modal-btn"><i class="fas fa-link"></i> ISNI Record</a>
-                    </div>
-                </div>
+            <h2 style="color: var(--primary); margin-bottom: 20px; font-family: 'Cinzel', serif;" id="modal-form-title">تقديم فيلم للمهرجان</h2>
+            
+            <div class="form-group">
+                <label id="lbl-title">عنوان الفيلم</label>
+                <input type="text" placeholder="اكتب اسم الفيلم هنا...">
             </div>
+
+            <div class="form-group">
+                <label id="lbl-director">اسم المخرج</label>
+                <input type="text" placeholder="اسم المخرج الكامل...">
+            </div>
+
+            <div class="form-group">
+                <label id="lbl-cat">فئة المسابقة</label>
+                <select>
+                    <option>روائي طويل</option>
+                    <option>وثائقي</option>
+                    <option>سينما تجريبية</option>
+                    <option>فيلم قصير</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label id="lbl-link">رابط الفيلم (Vimeo / YouTube / Password)</label>
+                <input type="text" placeholder="https://...">
+            </div>
+
+            <button class="submit-film-btn" style="width: 100%; padding: 12px; margin-top: 10px;" onclick="alert('تم استلام طلب التقديم بنجاح!')" id="btn-submit-final">إرسال طلب المشاركة</button>
         </div>
     </div>
 
     <!-- Footer -->
     <footer>
-        <p id="footer-text">&copy; 2026 CINE ARABIA Platform. All Rights Reserved. Powered by Global Authority Standards.</p>
+        <p id="footer-text">&copy; 2026 CINE FESTIVAL. جميع الحقوق محفوظة. المنصة الرقمية الرسمية للأفلام العالمية.</p>
     </footer>
 
-    <!-- JavaScript -->
+    <!-- JS Scripts -->
     <script>
         let currentLang = 'ar';
 
         const dict = {
             ar: {
-                navFilms: "الأفلام",
-                navDirectors: "دليل الصناع",
-                navFestivals: "المهرجانات والجوائز",
-                navAbout: "عن الموسوعة",
-                btnSubmit: "توثيق عمل",
-                heroBadge: "الأرشيف السينمائي الرقمي المعترف به دولياً",
-                heroTitle: "المرجع الأول للصناعة السينمائية العربية والعالمية",
-                heroSub: "قاعدة بيانات مفتوحة توثق المخرجين، الأفلام، والجوائز العالمية وفق أعلى معايير الأرشفة الدولية والمعرفات المعتمدة (ISNI & Wikidata & IMDb).",
-                searchPlaceholder: "ابحث عن اسم فيلم، مخرج (مثل مارتن سكورزيزي)، أو ممثل (مثل ميريل ستريب)...",
-                searchText: "بحث",
-                secTitle: "الأعمال والسجلات الموثقة",
-                footerText: "&copy; 2026 منصة السينما العربية (CINE ARABIA). جميع الحقوق محفوظة. مدعومة بمعايير الأرشفة المعتمدة."
+                navAbout: "عن المهرجان",
+                navCategories: "مسابقات المهرجان",
+                navJury: "لجنة التحكيم",
+                navAwards: "الجوائز",
+                btnSubmitHero: "تقديم فيلمك الان",
+                heroBadge: "الدورة الأولى الرقمية العالمية • 2026",
+                heroTitle: "مهرجان السينما الرقمي الدولي",
+                heroSub: "منصة عالمية تحتفي بإبداعات المخرجين والصناع مستقلين وعالميين في كافة الفئات السينمائية.",
+                heroBtnPrimary: "ارسل فيلمك للمشاركة",
+                statAwards: "مجموع الجوائز",
+                statCats: "مسابقات رسمية",
+                statDigital: "عروض رقمية عالمية",
+                catTitle: "مسابقات المهرجان الرسمية",
+                catSub: "نستقبل المشاركات السينمائية من جميع أنحاء العالم في أربع فئات رئيسية",
+                c1Title: "الأفلام الروائية الطويلة",
+                c1Desc: "المسابقة الرسمية للأفلام الروائية الطويلة التي تتجاوز 60 دقيقة ذات الرؤية البصرية والتعبيرية العميقة.",
+                c2Title: "الأفلام الوثائقية",
+                c2Desc: "الأعمال الوثائقية التي تسلط الضوء على القضايا الإنسانية، التحولات الاجتماعية، والذاكرة العمرانية.",
+                c3Title: "السينما التجريبية والفن البصري",
+                c3Desc: "الأعمال البصرية التي تتجاوز السرد التقليدي، معتمدة على اللغة البصرية والمؤثرات الحسية الحرة.",
+                c4Title: "الأفلام القصيرة",
+                c4Desc: "المسابقة المخصصة للأفلام القصيرة (أقل من 30 دقيقة) للمخرجين والمبدعين المستقلين.",
+                juryTitle: "لجنة التحكيم الدولية",
+                jurySub: "نخبة من صناع السينما والمخرجين والنقاد المعترف بهم دولياً",
+                j1Role: "رئيس لجنة التحكيم • مخرج وباحث",
+                j2Role: "ناقدة سينمائية • ألمانيا",
+                j3Role: "منتج سينمائي • فرنسا",
+                modalFormTitle: "تقديم فيلم للمهرجان",
+                lblTitle: "عنوان الفيلم",
+                lblDirector: "اسم المخرج",
+                lblCat: "فئة المسابقة",
+                lblLink: "رابط الفيلم (Vimeo / YouTube / Password)",
+                btnSubmitFinal: "إرسال طلب المشاركة",
+                footerText: "&copy; 2026 CINE FESTIVAL. جميع الحقوق محفوظة. المنصة الرقمية الرسمية للأفلام العالمية."
             },
             en: {
-                navFilms: "Films",
-                navDirectors: "Filmmakers Directory",
-                navFestivals: "Festivals & Awards",
-                navAbout: "About Encyclopedia",
-                btnSubmit: "Submit Work",
-                heroBadge: "Internationally Recognized Cinema Registry",
-                heroTitle: "The Premier Global Cinema Authority",
-                heroSub: "An open platform archiving filmmakers, movies, and awards according to international authority control standards (ISNI & Wikidata & IMDb).",
-                searchPlaceholder: "Search film, director (e.g., Martin Scorsese), or actress (e.g., Meryl Streep)...",
-                searchText: "Search",
-                secTitle: "Verified Records & Works",
-                footerText: "&copy; 2026 CINE ARABIA Platform. All Rights Reserved. Powered by Global Authority Standards."
+                navAbout: "About",
+                navCategories: "Categories",
+                navJury: "Jury Panel",
+                navAwards: "Awards",
+                btnSubmitHero: "Submit Your Film",
+                heroBadge: "1st Global Digital Edition • 2026",
+                heroTitle: "INTERNATIONAL DIGITAL FILM FESTIVAL",
+                heroSub: "A global platform celebrating independent and international filmmaking excellence across all cinematic categories.",
+                heroBtnPrimary: "Submit Your Entry",
+                statAwards: "Total Cash Prizes",
+                statCats: "Official Categories",
+                statDigital: "Global Digital Screenings",
+                catTitle: "Official Competition Categories",
+                catSub: "Accepting worldwide submissions across four primary cinematic categories",
+                c1Title: "Feature Narrative Films",
+                c1Desc: "Official competition for feature narrative films over 60 minutes with profound visual and narrative vision.",
+                c2Title: "Documentary Cinema",
+                c2Desc: "Documentary works highlighting human conditions, social transformations, and urban memory.",
+                c3Title: "Experimental & Visual Art",
+                c3Desc: "Visual works moving beyond traditional narrative, relying on sensory visual language.",
+                c4Title: "Short Film Section",
+                c4Desc: "Dedicated competition for short films (under 30 minutes) for independent creators.",
+                juryTitle: "International Jury Panel",
+                jurySub: "Renowned filmmakers, critics, and producers from around the world",
+                j1Role: "Jury President • Director & Scholar",
+                j2Role: "Film Critic • Germany",
+                j3Role: "Film Producer • France",
+                modalFormTitle: "Submit Film Entry",
+                lblTitle: "Film Title",
+                lblDirector: "Director's Name",
+                lblCat: "Submission Category",
+                lblLink: "Screening Link (Vimeo / YouTube / Password)",
+                btnSubmitFinal: "Submit Application",
+                footerText: "&copy; 2026 CINE FESTIVAL. All Rights Reserved. Official Global Digital Platform."
             }
         };
 
@@ -703,56 +615,51 @@
             currentLang = currentLang === 'ar' ? 'en' : 'ar';
             document.documentElement.lang = currentLang;
             document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
-            document.querySelector('.lang-btn').innerText = currentLang === 'ar' ? 'English' : 'عربي';
+            document.querySelector('.lang-btn').innerText = currentLang === 'ar' ? 'EN' : 'AR';
 
             const t = dict[currentLang];
-            document.getElementById('nav-films').innerText = t.navFilms;
-            document.getElementById('nav-directors').innerText = t.navDirectors;
-            document.getElementById('nav-festivals').innerText = t.navFestivals;
             document.getElementById('nav-about').innerText = t.navAbout;
-            document.getElementById('btn-submit').innerText = t.btnSubmit;
+            document.getElementById('nav-categories').innerText = t.navCategories;
+            document.getElementById('nav-jury').innerText = t.navJury;
+            document.getElementById('nav-awards').innerText = t.navAwards;
+            document.getElementById('btn-submit-hero').innerText = t.btnSubmitHero;
             document.getElementById('hero-badge').innerText = t.heroBadge;
             document.getElementById('hero-title').innerText = t.heroTitle;
             document.getElementById('hero-sub').innerText = t.heroSub;
-            document.getElementById('search-input').placeholder = t.searchPlaceholder;
-            document.getElementById('search-text').innerText = t.searchText;
-            document.getElementById('sec-title').innerText = t.secTitle;
+            document.getElementById('hero-btn-primary').innerText = t.heroBtnPrimary;
+            document.getElementById('stat-awards').innerText = t.statAwards;
+            document.getElementById('stat-cats').innerText = t.statCats;
+            document.getElementById('stat-digital').innerText = t.statDigital;
+            document.getElementById('cat-title').innerText = t.catTitle;
+            document.getElementById('cat-sub').innerText = t.catSub;
+            document.getElementById('c1-title').innerText = t.c1Title;
+            document.getElementById('c1-desc').innerText = t.c1Desc;
+            document.getElementById('c2-title').innerText = t.c2Title;
+            document.getElementById('c2-desc').innerText = t.c2Desc;
+            document.getElementById('c3-title').innerText = t.c3Title;
+            document.getElementById('c3-desc').innerText = t.c3Desc;
+            document.getElementById('c4-title').innerText = t.c4Title;
+            document.getElementById('c4-desc').innerText = t.c4Desc;
+            document.getElementById('jury-title').innerText = t.juryTitle;
+            document.getElementById('jury-sub').innerText = t.jurySub;
+            document.getElementById('j1-role').innerText = t.j1Role;
+            document.getElementById('j2-role').innerText = t.j2Role;
+            document.getElementById('j3-role').innerText = t.j3Role;
+            document.getElementById('modal-form-title').innerText = t.modalFormTitle;
+            document.getElementById('lbl-title').innerText = t.lblTitle;
+            document.getElementById('lbl-director').innerText = t.lblDirector;
+            document.getElementById('lbl-cat').innerText = t.lblCat;
+            document.getElementById('lbl-link').innerText = t.lblLink;
+            document.getElementById('btn-submit-final').innerText = t.btnSubmitFinal;
             document.getElementById('footer-text').innerHTML = t.footerText;
         }
 
-        function filterCategory(cat, btn) {
-            document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-
-            const cards = document.querySelectorAll('.card');
-            cards.forEach(card => {
-                if (cat === 'all' || card.getAttribute('data-cat') === cat) {
-                    card.style.display = 'flex';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        }
-
-        function openModal(title, meta, desc, img, director, auth) {
-            document.getElementById('modal-title').innerText = title;
-            document.getElementById('modal-meta').innerText = meta;
-            document.getElementById('modal-desc').innerText = desc;
-            document.getElementById('modal-img').src = img;
-            document.getElementById('modal-director').innerText = director;
-            document.getElementById('modal-auth').innerText = auth;
-            document.getElementById('info-modal').style.display = 'flex';
+        function openModal() {
+            document.getElementById('submit-modal').style.display = 'flex';
         }
 
         function closeModal() {
-            document.getElementById('info-modal').style.display = 'none';
-        }
-
-        window.onclick = function(event) {
-            const modal = document.getElementById('info-modal');
-            if (event.target == modal) {
-                closeModal();
-            }
+            document.getElementById('submit-modal').style.display = 'none';
         }
     </script>
 </body>
