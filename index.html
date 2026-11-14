@@ -8,24 +8,25 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800;900&family=Plus+Jakarta+Sans:wght@300;500;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
     
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         :root {
-            --bg-main: #0B0B0E;
-            --surface: #14151B;
-            --surface-subtle: #1E2029;
-            --primary: #D4AF37; /* Burnished Gold */
-            --primary-light: #F3E5AB;
-            --accent-red: #E50914;
-            --text-main: #F9FAFB;
-            --text-muted: #9CA3AF;
-            --border-color: #272A36;
-            --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.6);
-            --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            --bg-deep: #090A10;
+            --surface: #131622;
+            --surface-hover: #1B2032;
+            --gold-bright: #FFD166;
+            --gold-rich: #E09F3E;
+            --crimson-glow: #EF233C;
+            --royal-violet: #7209B7;
+            --cyan-accent: #00F5D4;
+            --text-main: #FFFFFF;
+            --text-muted: #A8B2D1;
+            --border-color: rgba(255, 209, 102, 0.2);
+            --transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         * {
@@ -36,9 +37,10 @@
         }
 
         body {
-            background-color: var(--bg-main);
+            background-color: var(--bg-deep);
             color: var(--text-main);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
         /* Header Navigation */
@@ -46,33 +48,28 @@
             position: fixed;
             top: 0;
             width: 100%;
-            padding: 18px 50px;
+            padding: 16px 50px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             z-index: 1000;
-            background: rgba(11, 11, 14, 0.92);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border-color);
+            background: rgba(9, 10, 16, 0.85);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
 
-        .logo {
+        .nav-logo {
             font-family: 'Cinzel', serif;
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             font-weight: 900;
-            color: var(--primary);
-            letter-spacing: 4px;
+            background: linear-gradient(135deg, var(--gold-bright), var(--crimson-glow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 3px;
             text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .logo-monogram {
-            border: 2px solid var(--primary);
-            padding: 2px 10px;
-            border-radius: 6px;
-            background: rgba(212, 175, 55, 0.08);
+            border: 1.5px solid var(--gold-rich);
+            padding: 2px 12px;
+            border-radius: 8px;
         }
 
         nav ul {
@@ -89,73 +86,99 @@
             transition: var(--transition);
         }
 
-        nav a:hover, nav a.active {
-            color: var(--primary);
+        nav a:hover {
+            color: var(--gold-bright);
         }
 
         .submit-film-btn {
-            background: linear-gradient(135deg, var(--primary), #B8860B);
-            color: #000;
+            background: linear-gradient(135deg, var(--crimson-glow), var(--royal-violet));
+            color: #FFF;
             border: none;
-            padding: 10px 24px;
-            border-radius: 25px;
-            font-weight: 800;
-            font-size: 0.9rem;
+            padding: 10px 26px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 0.92rem;
             cursor: pointer;
             transition: var(--transition);
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+            box-shadow: 0 6px 20px rgba(239, 35, 60, 0.35);
         }
 
         .submit-film-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+            transform: translateY(-2px) scale(1.03);
+            box-shadow: 0 10px 28px rgba(239, 35, 60, 0.55);
         }
 
-        /* Hero Banner */
+        /* Hero Banner with Large Logo */
         .hero {
-            min-height: 92vh;
+            min-height: 100vh;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 120px 20px 60px;
+            padding: 120px 20px 70px;
             position: relative;
-            background: radial-gradient(circle at center, rgba(212, 175, 55, 0.12) 0%, var(--bg-main) 75%),
-                        url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=2070') center/cover no-repeat;
+            background: 
+                radial-gradient(circle at 20% 25%, rgba(114, 9, 183, 0.25) 0%, transparent 45%),
+                radial-gradient(circle at 80% 30%, rgba(239, 35, 60, 0.22) 0%, transparent 45%),
+                radial-gradient(circle at 50% 70%, rgba(255, 209, 102, 0.12) 0%, transparent 55%),
+                var(--bg-deep);
         }
 
-        .hero-overlay {
+        /* Large Hero Logo Showcase */
+        .hero-logo-showcase {
+            margin-bottom: 25px;
+            position: relative;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            animation: floatLogo 6s ease-in-out infinite;
+        }
+
+        @keyframes floatLogo {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .hero-logo-glow {
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(11, 11, 14, 0.82);
+            width: 240px;
+            height: 240px;
+            background: radial-gradient(circle, rgba(255, 209, 102, 0.35) 0%, rgba(239, 35, 60, 0.15) 50%, transparent 75%);
+            filter: blur(20px);
+            z-index: 0;
         }
 
-        .hero-content {
+        .hero-logo-svg {
+            width: 220px;
+            height: 220px;
             position: relative;
-            z-index: 2;
-            max-width: 880px;
+            z-index: 1;
+            filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.6));
         }
 
         .festival-edition {
             display: inline-block;
-            background: rgba(212, 175, 55, 0.15);
-            color: var(--primary);
+            background: rgba(0, 245, 212, 0.1);
+            color: var(--cyan-accent);
             padding: 6px 22px;
             border-radius: 30px;
             font-size: 0.85rem;
             font-weight: 700;
-            margin-bottom: 22px;
-            border: 1px solid rgba(212, 175, 55, 0.4);
-            letter-spacing: 1.5px;
+            margin-bottom: 18px;
+            border: 1px solid rgba(0, 245, 212, 0.35);
+            letter-spacing: 2px;
             text-transform: uppercase;
         }
 
         .hero h1 {
             font-family: 'Cinzel', serif;
-            font-size: clamp(2.5rem, 6vw, 4.6rem);
+            font-size: clamp(2.6rem, 6vw, 4.8rem);
             font-weight: 900;
-            color: #FFFFFF;
-            margin-bottom: 20px;
+            background: linear-gradient(to right, #FFFFFF 20%, var(--gold-bright) 50%, #FFFFFF 80%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 18px;
             line-height: 1.15;
             text-transform: uppercase;
             letter-spacing: 2px;
@@ -164,26 +187,51 @@
         .hero p {
             font-size: 1.15rem;
             color: var(--text-muted);
-            margin-bottom: 40px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+            margin-bottom: 35px;
+            max-width: 680px;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            gap: 18px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-gold-large {
+            background: linear-gradient(135deg, var(--gold-bright), var(--gold-rich));
+            color: #090A10;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 35px;
+            font-weight: 800;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 8px 25px rgba(255, 209, 102, 0.35);
+        }
+
+        .btn-gold-large:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 32px rgba(255, 209, 102, 0.55);
         }
 
         .hero-stats {
             display: flex;
             justify-content: center;
-            gap: 50px;
+            gap: 55px;
             flex-wrap: wrap;
-            margin-top: 45px;
+            margin-top: 50px;
             padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .stat-item h3 {
             font-family: 'Cinzel', serif;
-            font-size: 2.2rem;
-            color: var(--primary);
+            font-size: 2.3rem;
+            background: linear-gradient(135deg, var(--gold-bright), var(--crimson-glow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .stat-item p {
@@ -208,53 +256,80 @@
 
         .section-title {
             font-family: 'Cinzel', serif;
-            font-size: 2.3rem;
+            font-size: 2.4rem;
             color: #FFFFFF;
             margin-bottom: 12px;
-            letter-spacing: 1px;
+        }
+
+        .section-title span {
+            color: var(--gold-bright);
         }
 
         .section-subtitle {
             color: var(--text-muted);
-            font-size: 1rem;
+            font-size: 1.05rem;
         }
 
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-            gap: 30px;
+            gap: 28px;
         }
 
         .category-card {
             background: var(--surface);
-            border-radius: 16px;
-            border: 1px solid var(--border-color);
-            padding: 35px 25px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 38px 25px;
             text-align: center;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .category-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 4px;
+            background: linear-gradient(90deg, var(--crimson-glow), var(--gold-bright), var(--cyan-accent));
+            opacity: 0;
             transition: var(--transition);
         }
 
         .category-card:hover {
             transform: translateY(-8px);
-            border-color: var(--primary);
-            box-shadow: var(--shadow-lg);
+            background: var(--surface-hover);
+            border-color: var(--border-color);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .category-card:hover::before {
+            opacity: 1;
         }
 
         .category-icon {
-            font-size: 2.4rem;
-            color: var(--primary);
-            margin-bottom: 20px;
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 22px;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            background: linear-gradient(135deg, rgba(255, 209, 102, 0.15), rgba(239, 35, 60, 0.15));
+            color: var(--gold-bright);
+            border: 1px solid rgba(255, 209, 102, 0.25);
         }
 
         .category-card h3 {
-            font-size: 1.25rem;
+            font-size: 1.3rem;
             margin-bottom: 12px;
             color: #FFF;
         }
 
         .category-card p {
             color: var(--text-muted);
-            font-size: 0.9rem;
+            font-size: 0.92rem;
             line-height: 1.6;
         }
 
@@ -267,36 +342,37 @@
 
         .jury-card {
             background: var(--surface);
-            border-radius: 16px;
-            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
             overflow: hidden;
             text-align: center;
             transition: var(--transition);
         }
 
         .jury-card:hover {
-            border-color: var(--primary);
-            transform: translateY(-5px);
+            border-color: var(--gold-bright);
+            transform: translateY(-6px);
+            box-shadow: 0 18px 35px rgba(0, 0, 0, 0.5);
         }
 
         .jury-img {
             width: 100%;
-            height: 300px;
+            height: 310px;
             object-fit: cover;
         }
 
         .jury-body {
-            padding: 22px;
+            padding: 24px;
         }
 
         .jury-body h3 {
-            font-size: 1.25rem;
+            font-size: 1.3rem;
             color: #FFF;
             margin-bottom: 6px;
         }
 
         .jury-body span {
-            color: var(--primary);
+            color: var(--cyan-accent);
             font-size: 0.85rem;
             font-weight: 700;
             display: block;
@@ -307,8 +383,8 @@
             display: none;
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.82);
-            backdrop-filter: blur(8px);
+            background: rgba(9, 10, 16, 0.85);
+            backdrop-filter: blur(10px);
             z-index: 2000;
             justify-content: center;
             align-items: center;
@@ -319,16 +395,16 @@
             background: var(--surface);
             border: 1px solid var(--border-color);
             width: 100%;
-            max-width: 560px;
-            border-radius: 20px;
-            padding: 35px;
+            max-width: 550px;
+            border-radius: 24px;
+            padding: 38px;
             position: relative;
-            box-shadow: var(--shadow-lg);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
         }
 
         .modal-close {
             position: absolute;
-            top: 20px; right: 22px;
+            top: 22px; right: 24px;
             font-size: 1.6rem;
             color: var(--text-muted);
             cursor: pointer;
@@ -336,7 +412,7 @@
         }
 
         .modal-close:hover {
-            color: var(--primary);
+            color: var(--crimson-glow);
         }
 
         .form-group {
@@ -354,33 +430,34 @@
 
         .form-group input, .form-group select {
             width: 100%;
-            background: var(--surface-subtle);
-            border: 1px solid var(--border-color);
-            padding: 12px 15px;
-            border-radius: 10px;
+            background: var(--bg-deep);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            padding: 13px 16px;
+            border-radius: 12px;
             color: #FFF;
             outline: none;
             font-size: 0.95rem;
         }
 
         .form-group input:focus, .form-group select:focus {
-            border-color: var(--primary);
+            border-color: var(--gold-bright);
         }
 
         /* Footer */
         footer {
-            background: #060608;
-            border-top: 1px solid var(--border-color);
+            background: #050609;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
             padding: 50px 20px 30px;
             text-align: center;
             color: var(--text-muted);
             margin-top: 80px;
-            font-size: 0.9rem;
+            font-size: 0.92rem;
         }
 
         @media (max-width: 768px) {
             header { padding: 15px 20px; }
             nav ul { display: none; }
+            .hero-logo-svg { width: 170px; height: 170px; }
         }
     </style>
 </head>
@@ -388,9 +465,7 @@
 
     <!-- Header Navigation -->
     <header>
-        <a href="#" class="logo">
-            <span class="logo-monogram">ICF</span>
-        </a>
+        <a href="#" class="nav-logo">ICF</a>
         <nav>
             <ul>
                 <li><a href="#about">About</a></li>
@@ -404,31 +479,68 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero Section with Large ICF Logo -->
     <section class="hero" id="about">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <span class="festival-edition">1st Digital Edition • 2026</span>
-            <h1>International Cinema Festival</h1>
-            <p>A premier global platform celebrating bold storytelling, visionary filmmaking, and independent cinema across all genres and formats.</p>
-            
-            <div>
-                <button class="submit-film-btn" style="padding: 14px 38px; font-size: 1rem;" onclick="openModal()">Submit Your Entry</button>
-            </div>
+        
+        <!-- Large Custom SVG Logo Emblem -->
+        <div class="hero-logo-showcase">
+            <div class="hero-logo-glow"></div>
+            <svg class="hero-logo-svg" viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#FFD166"/>
+                        <stop offset="50%" stop-color="#E09F3E"/>
+                        <stop offset="100%" stop-color="#EF233C"/>
+                    </linearGradient>
+                    <linearGradient id="ringGrad" x1="100%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stop-color="#00F5D4"/>
+                        <stop offset="50%" stop-color="#FFD166"/>
+                        <stop offset="100%" stop-color="#7209B7"/>
+                    </linearGradient>
+                </defs>
+                
+                <!-- Outer Decorative Rings -->
+                <circle cx="130" cy="130" r="120" fill="#131622" stroke="url(#ringGrad)" stroke-width="4"/>
+                <circle cx="130" cy="130" r="106" fill="none" stroke="url(#goldGrad)" stroke-width="1.5" stroke-dasharray="8 6"/>
+                
+                <!-- Film Sprocket Accents -->
+                <circle cx="130" cy="24" r="3" fill="#FFD166"/>
+                <circle cx="130" cy="236" r="3" fill="#FFD166"/>
+                <circle cx="24" cy="130" r="3" fill="#00F5D4"/>
+                <circle cx="236" cy="130" r="3" fill="#EF233C"/>
 
-            <div class="hero-stats">
-                <div class="stat-item">
-                    <h3>$50,000</h3>
-                    <p>Total Cash Prizes</p>
-                </div>
-                <div class="stat-item">
-                    <h3>4</h3>
-                    <p>Official Categories</p>
-                </div>
-                <div class="stat-item">
-                    <h3>Global</h3>
-                    <p>Digital Screenings</p>
-                </div>
+                <!-- Laurel Wreath Left & Right Minimalist Arcs -->
+                <path d="M 65 185 A 85 85 0 0 1 65 75" fill="none" stroke="#FFD166" stroke-width="3" stroke-linecap="round"/>
+                <path d="M 195 185 A 85 85 0 0 0 195 75" fill="none" stroke="#FFD166" stroke-width="3" stroke-linecap="round"/>
+
+                <!-- Monogram Initials: ICF -->
+                <text x="130" y="144" text-anchor="middle" font-family="'Cinzel', serif" font-weight="900" font-size="64" letter-spacing="4" fill="url(#goldGrad)">ICF</text>
+                
+                <!-- Subtitle inside Emblem -->
+                <text x="130" y="174" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="9.5" letter-spacing="3.5" fill="#A8B2D1">EST. 2026</text>
+            </svg>
+        </div>
+
+        <span class="festival-edition">1st Global Digital Edition • 2026</span>
+        <h1>International Cinema Festival</h1>
+        <p>A vibrant global stage celebrating bold storytelling, visionary filmmaking, and independent cinema across all genres and formats.</p>
+        
+        <div class="hero-cta-group">
+            <button class="btn-gold-large" onclick="openModal()">Submit Your Film Now</button>
+        </div>
+
+        <div class="hero-stats">
+            <div class="stat-item">
+                <h3>$50,000</h3>
+                <p>Total Cash Prizes</p>
+            </div>
+            <div class="stat-item">
+                <h3>4</h3>
+                <p>Official Categories</p>
+            </div>
+            <div class="stat-item">
+                <h3>Global</h3>
+                <p>Digital Screenings</p>
             </div>
         </div>
     </section>
@@ -436,31 +548,31 @@
     <!-- Categories Section -->
     <main class="main-container">
         <div class="section-header" id="categories">
-            <h2 class="section-title">Official Competition Categories</h2>
-            <p class="section-subtitle">Accepting international submissions across four dedicated sections</p>
+            <h2 class="section-title">Official <span>Competition</span> Categories</h2>
+            <p class="section-subtitle">Accepting international submissions across four dedicated cinematic sections</p>
         </div>
 
         <div class="grid">
             <div class="category-card">
-                <i class="fas fa-film category-icon"></i>
+                <div class="category-icon"><i class="fas fa-film"></i></div>
                 <h3>Feature Narrative</h3>
                 <p>Official selection for narrative feature films over 60 minutes demonstrating exceptional cinematic craft and storytelling.</p>
             </div>
 
             <div class="category-card">
-                <i class="fas fa-video category-icon"></i>
+                <div class="category-icon"><i class="fas fa-video"></i></div>
                 <h3>Documentary Cinema</h3>
                 <p>Non-fiction works exploring human realities, social transformations, cultural heritage, and investigative journalism.</p>
             </div>
 
             <div class="category-card">
-                <i class="fas fa-eye category-icon"></i>
+                <div class="category-icon"><i class="fas fa-eye"></i></div>
                 <h3>Experimental & Visual Art</h3>
                 <p>Avant-garde and boundary-pushing cinema moving beyond conventional narrative through pure visual and sonic language.</p>
             </div>
 
             <div class="category-card">
-                <i class="fas fa-stopwatch category-icon"></i>
+                <div class="category-icon"><i class="fas fa-stopwatch"></i></div>
                 <h3>Short Films</h3>
                 <p>Dedicated competition for independent short films under 30 minutes across narrative, documentary, and animation.</p>
             </div>
@@ -468,7 +580,7 @@
 
         <!-- Jury Section -->
         <div class="section-header" style="margin-top: 100px;" id="jury">
-            <h2 class="section-title">International Jury Panel</h2>
+            <h2 class="section-title">International <span>Jury</span> Panel</h2>
             <p class="section-subtitle">Acclaimed filmmakers, producers, and film scholars from around the world</p>
         </div>
 
@@ -476,7 +588,7 @@
             <div class="jury-card">
                 <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000" class="jury-img" alt="Jury Member">
                 <div class="jury-body">
-                    <h3>Zeki Yahya</h3>
+                    <h3>Jamal Albahadly</h3>
                     <span>Jury President • Director & Film Scholar</span>
                 </div>
             </div>
@@ -503,7 +615,7 @@
     <div class="modal" id="submit-modal">
         <div class="modal-content">
             <span class="modal-close" onclick="closeModal()">&times;</span>
-            <h2 style="color: var(--primary); margin-bottom: 22px; font-family: 'Cinzel', serif;">Official Film Submission</h2>
+            <h2 style="color: var(--gold-bright); margin-bottom: 22px; font-family: 'Cinzel', serif;">Official Film Submission</h2>
             
             <div class="form-group">
                 <label>Film Title</label>
@@ -530,7 +642,7 @@
                 <input type="text" placeholder="https://vimeo.com/...">
             </div>
 
-            <button class="submit-film-btn" style="width: 100%; padding: 13px; margin-top: 10px;" onclick="submitEntry()">Submit Application</button>
+            <button class="btn-gold-large" style="width: 100%; padding: 14px; margin-top: 10px;" onclick="submitEntry()">Submit Application</button>
         </div>
     </div>
 
