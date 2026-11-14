@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CINE FESTIVAL | مهرجان السينما الرقمي الدولي</title>
+    <title>ICF | International Cinema Festival</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800;900&family=Tajawal:wght@300;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800;900&family=Plus+Jakarta+Sans:wght@300;500;700;800&display=swap" rel="stylesheet">
     
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -18,7 +18,7 @@
             --bg-main: #0B0B0E;
             --surface: #14151B;
             --surface-subtle: #1E2029;
-            --primary: #D4AF37; /* ذهبي المهرجانات */
+            --primary: #D4AF37; /* Burnished Gold */
             --primary-light: #F3E5AB;
             --accent-red: #E50914;
             --text-main: #F9FAFB;
@@ -32,7 +32,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Tajawal', sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
         }
 
         body {
@@ -51,33 +51,40 @@
             justify-content: space-between;
             align-items: center;
             z-index: 1000;
-            background: rgba(11, 11, 14, 0.9);
+            background: rgba(11, 11, 14, 0.92);
             backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border-color);
         }
 
         .logo {
             font-family: 'Cinzel', serif;
-            font-size: 1.6rem;
+            font-size: 1.8rem;
             font-weight: 900;
             color: var(--primary);
-            letter-spacing: 2px;
+            letter-spacing: 4px;
             text-decoration: none;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
+        }
+
+        .logo-monogram {
+            border: 2px solid var(--primary);
+            padding: 2px 10px;
+            border-radius: 6px;
+            background: rgba(212, 175, 55, 0.08);
         }
 
         nav ul {
             display: flex;
             list-style: none;
-            gap: 30px;
+            gap: 35px;
         }
 
         nav a {
             color: var(--text-main);
             text-decoration: none;
-            font-weight: 700;
+            font-weight: 600;
             font-size: 0.95rem;
             transition: var(--transition);
         }
@@ -86,35 +93,14 @@
             color: var(--primary);
         }
 
-        .header-actions {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .lang-btn {
-            background: transparent;
-            border: 1px solid var(--primary);
-            color: var(--primary);
-            padding: 6px 18px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: var(--transition);
-        }
-
-        .lang-btn:hover {
-            background: var(--primary);
-            color: var(--bg-main);
-        }
-
         .submit-film-btn {
             background: linear-gradient(135deg, var(--primary), #B8860B);
             color: #000;
             border: none;
-            padding: 8px 22px;
-            border-radius: 20px;
+            padding: 10px 24px;
+            border-radius: 25px;
             font-weight: 800;
+            font-size: 0.9rem;
             cursor: pointer;
             transition: var(--transition);
             box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
@@ -127,7 +113,7 @@
 
         /* Hero Banner */
         .hero {
-            min-height: 90vh;
+            min-height: 92vh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -141,13 +127,13 @@
         .hero-overlay {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(11, 11, 14, 0.8);
+            background: rgba(11, 11, 14, 0.82);
         }
 
         .hero-content {
             position: relative;
             z-index: 2;
-            max-width: 850px;
+            max-width: 880px;
         }
 
         .festival-edition {
@@ -156,35 +142,42 @@
             color: var(--primary);
             padding: 6px 22px;
             border-radius: 30px;
-            font-size: 0.9rem;
-            font-weight: 800;
-            margin-bottom: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 22px;
             border: 1px solid rgba(212, 175, 55, 0.4);
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
         }
 
         .hero h1 {
             font-family: 'Cinzel', serif;
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-size: clamp(2.5rem, 6vw, 4.6rem);
             font-weight: 900;
             color: #FFFFFF;
             margin-bottom: 20px;
             line-height: 1.15;
             text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             color: var(--text-muted);
             margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .hero-stats {
             display: flex;
             justify-content: center;
-            gap: 40px;
+            gap: 50px;
             flex-wrap: wrap;
-            margin-top: 30px;
+            margin-top: 45px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .stat-item h3 {
@@ -197,25 +190,28 @@
             font-size: 0.85rem;
             color: var(--text-muted);
             margin-bottom: 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         /* Categories Section */
         .main-container {
             max-width: 1250px;
             margin: 0 auto;
-            padding: 80px 20px;
+            padding: 90px 20px;
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 55px;
         }
 
         .section-title {
             font-family: 'Cinzel', serif;
-            font-size: 2.2rem;
+            font-size: 2.3rem;
             color: #FFFFFF;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
         }
 
         .section-subtitle {
@@ -225,7 +221,7 @@
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
             gap: 30px;
         }
 
@@ -233,11 +229,9 @@
             background: var(--surface);
             border-radius: 16px;
             border: 1px solid var(--border-color);
-            padding: 30px 25px;
+            padding: 35px 25px;
             text-align: center;
             transition: var(--transition);
-            position: relative;
-            overflow: hidden;
         }
 
         .category-card:hover {
@@ -247,13 +241,13 @@
         }
 
         .category-icon {
-            font-size: 2.5rem;
+            font-size: 2.4rem;
             color: var(--primary);
             margin-bottom: 20px;
         }
 
         .category-card h3 {
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             margin-bottom: 12px;
             color: #FFF;
         }
@@ -261,15 +255,14 @@
         .category-card p {
             color: var(--text-muted);
             font-size: 0.9rem;
-            line-height: 1.5;
+            line-height: 1.6;
         }
 
-        /* Featured Jury & Guests */
+        /* Jury Section */
         .jury-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-            gap: 25px;
-            margin-top: 40px;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
         }
 
         .jury-card {
@@ -278,22 +271,28 @@
             border: 1px solid var(--border-color);
             overflow: hidden;
             text-align: center;
+            transition: var(--transition);
+        }
+
+        .jury-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
         }
 
         .jury-img {
             width: 100%;
-            height: 280px;
+            height: 300px;
             object-fit: cover;
         }
 
         .jury-body {
-            padding: 20px;
+            padding: 22px;
         }
 
         .jury-body h3 {
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             color: #FFF;
-            margin-bottom: 5px;
+            margin-bottom: 6px;
         }
 
         .jury-body span {
@@ -301,15 +300,14 @@
             font-size: 0.85rem;
             font-weight: 700;
             display: block;
-            margin-bottom: 10px;
         }
 
-        /* Submit Form Modal */
+        /* Submission Modal */
         .modal {
             display: none;
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(0, 0, 0, 0.82);
             backdrop-filter: blur(8px);
             z-index: 2000;
             justify-content: center;
@@ -321,41 +319,40 @@
             background: var(--surface);
             border: 1px solid var(--border-color);
             width: 100%;
-            max-width: 600px;
+            max-width: 560px;
             border-radius: 20px;
             padding: 35px;
             position: relative;
+            box-shadow: var(--shadow-lg);
         }
 
         .modal-close {
             position: absolute;
-            top: 20px; left: 20px;
-            font-size: 1.5rem;
+            top: 20px; right: 22px;
+            font-size: 1.6rem;
             color: var(--text-muted);
             cursor: pointer;
+            transition: var(--transition);
         }
 
-        html[dir="rtl"] .modal-close {
-            left: auto; right: 20px;
+        .modal-close:hover {
+            color: var(--primary);
         }
 
         .form-group {
-            margin-bottom: 20px;
-            text-align: right;
-        }
-
-        html[dir="ltr"] .form-group {
+            margin-bottom: 18px;
             text-align: left;
         }
 
         .form-group label {
             display: block;
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             color: var(--text-muted);
             margin-bottom: 8px;
+            font-weight: 600;
         }
 
-        .form-group input, .form-group select, .form-group textarea {
+        .form-group input, .form-group select {
             width: 100%;
             background: var(--surface-subtle);
             border: 1px solid var(--border-color);
@@ -363,6 +360,11 @@
             border-radius: 10px;
             color: #FFF;
             outline: none;
+            font-size: 0.95rem;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            border-color: var(--primary);
         }
 
         /* Footer */
@@ -373,6 +375,12 @@
             text-align: center;
             color: var(--text-muted);
             margin-top: 80px;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            header { padding: 15px 20px; }
+            nav ul { display: none; }
         }
     </style>
 </head>
@@ -381,112 +389,111 @@
     <!-- Header Navigation -->
     <header>
         <a href="#" class="logo">
-            <i class="fas fa-trophy"></i> CINE FESTIVAL
+            <span class="logo-monogram">ICF</span>
         </a>
         <nav>
             <ul>
-                <li><a href="#about" id="nav-about">عن المهرجان</a></li>
-                <li><a href="#categories" id="nav-categories">مسابقات المهرجان</a></li>
-                <li><a href="#jury" id="nav-jury">لجنة التحكيم</a></li>
-                <li><a href="#awards" id="nav-awards">الجوائز</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#categories">Categories</a></li>
+                <li><a href="#jury">Jury Panel</a></li>
+                <li><a href="#awards">Awards</a></li>
             </ul>
         </nav>
-        <div class="header-actions">
-            <button class="lang-btn" onclick="toggleLanguage()">EN</button>
-            <button class="submit-film-btn" onclick="openModal()" id="btn-submit-hero">تقديم فيلمك الان</button>
+        <div>
+            <button class="submit-film-btn" onclick="openModal()">Submit Film</button>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="about">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <span class="festival-edition" id="hero-badge">الدورة الأولى الرقمية العالمية • 2026</span>
-            <h1 id="hero-title">مهرجان السينما الرقمي الدولي</h1>
-            <p id="hero-sub">منصة عالمية تحتفي بإبداعات المخرجين والصناع مستقلين وعالميين في كافة الفئات السينمائية.</p>
+            <span class="festival-edition">1st Digital Edition • 2026</span>
+            <h1>International Cinema Festival</h1>
+            <p>A premier global platform celebrating bold storytelling, visionary filmmaking, and independent cinema across all genres and formats.</p>
             
-            <div style="display: flex; gap: 15px; justify-content: center;">
-                <button class="submit-film-btn" style="padding: 12px 35px; font-size: 1rem;" onclick="openModal()" id="hero-btn-primary">ارسل فيلمك للمشاركة</button>
+            <div>
+                <button class="submit-film-btn" style="padding: 14px 38px; font-size: 1rem;" onclick="openModal()">Submit Your Entry</button>
             </div>
 
             <div class="hero-stats">
                 <div class="stat-item">
                     <h3>$50,000</h3>
-                    <p id="stat-awards">مجموع الجوائز</p>
+                    <p>Total Cash Prizes</p>
                 </div>
                 <div class="stat-item">
                     <h3>4</h3>
-                    <p id="stat-cats">مسابقات رسمية</p>
+                    <p>Official Categories</p>
                 </div>
                 <div class="stat-item">
-                    <h3>100%</h3>
-                    <p id="stat-digital">عروض رقمية عالمية</p>
+                    <h3>Global</h3>
+                    <p>Digital Screenings</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Categories Section -->
-    <main class="main-container" id="categories">
-        <div class="section-header">
-            <h2 class="section-title" id="cat-title">مسابقات المهرجان الرسمية</h2>
-            <p class="section-subtitle" id="cat-sub">نستقبل المشاركات السينمائية من جميع أنحاء العالم في أربع فئات رئيسية</p>
+    <main class="main-container">
+        <div class="section-header" id="categories">
+            <h2 class="section-title">Official Competition Categories</h2>
+            <p class="section-subtitle">Accepting international submissions across four dedicated sections</p>
         </div>
 
         <div class="grid">
             <div class="category-card">
                 <i class="fas fa-film category-icon"></i>
-                <h3 id="c1-title">الأفلام الروائية الطويلة</h3>
-                <p id="c1-desc">المسابقة الرسمية للأفلام الروائية الطويلة التي تتجاوز 60 دقيقة ذات الرؤية البصرية والتعبيرية العميقة.</p>
+                <h3>Feature Narrative</h3>
+                <p>Official selection for narrative feature films over 60 minutes demonstrating exceptional cinematic craft and storytelling.</p>
             </div>
 
             <div class="category-card">
                 <i class="fas fa-video category-icon"></i>
-                <h3 id="c2-title">الأفلام الوثائقية</h3>
-                <p id="c2-desc">الأعمال الوثائقية التي تسلط الضوء على القضايا الإنسانية، التحولات الاجتماعية، والذاكرة العمرانية.</p>
+                <h3>Documentary Cinema</h3>
+                <p>Non-fiction works exploring human realities, social transformations, cultural heritage, and investigative journalism.</p>
             </div>
 
             <div class="category-card">
-                <i class="fas fa-brain category-icon"></i>
-                <h3 id="c3-title">السينما التجريبية والفن البصري</h3>
-                <p id="c3-desc">الأعمال البصرية التي تتجاوز السرد التقليدي، معتمدة على اللغة البصرية والمؤثرات الحسية الحرة.</p>
+                <i class="fas fa-eye category-icon"></i>
+                <h3>Experimental & Visual Art</h3>
+                <p>Avant-garde and boundary-pushing cinema moving beyond conventional narrative through pure visual and sonic language.</p>
             </div>
 
             <div class="category-card">
                 <i class="fas fa-stopwatch category-icon"></i>
-                <h3 id="c4-title">الأفلام القصيرة</h3>
-                <p id="c4-desc">المسابقة المخصصة للأفلام القصيرة (أقل من 30 دقيقة) للمخرجين والمبدعين المستقلين.</p>
+                <h3>Short Films</h3>
+                <p>Dedicated competition for independent short films under 30 minutes across narrative, documentary, and animation.</p>
             </div>
         </div>
 
         <!-- Jury Section -->
-        <div class="section-header" style="margin-top: 90px;" id="jury">
-            <h2 class="section-title" id="jury-title">لجنة التحكيم الدولية</h2>
-            <p class="section-subtitle" id="jury-sub">نخبة من صناع السينما والمخرجين والنقاد المعترف بهم دولياً</p>
+        <div class="section-header" style="margin-top: 100px;" id="jury">
+            <h2 class="section-title">International Jury Panel</h2>
+            <p class="section-subtitle">Acclaimed filmmakers, producers, and film scholars from around the world</p>
         </div>
 
         <div class="jury-grid">
             <div class="jury-card">
-                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000" class="jury-img" alt="Jury">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000" class="jury-img" alt="Jury Member">
                 <div class="jury-body">
-                    <h3>جمال البهادلي</h3>
-                    <span id="j1-role">رئيس لجنة التحكيم • مخرج وباحث</span>
+                    <h3>Zeki Yahya</h3>
+                    <span>Jury President • Director & Film Scholar</span>
                 </div>
             </div>
 
             <div class="jury-card">
-                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1000" class="jury-img" alt="Jury">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1000" class="jury-img" alt="Jury Member">
                 <div class="jury-body">
-                    <h3>سارة كولمان</h3>
-                    <span id="j2-role">ناقدة سينمائية • ألمانيا</span>
+                    <h3>Clara Hoffmann</h3>
+                    <span>Senior Film Critic • Germany</span>
                 </div>
             </div>
 
             <div class="jury-card">
-                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1000" class="jury-img" alt="Jury">
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1000" class="jury-img" alt="Jury Member">
                 <div class="jury-body">
-                    <h3>جان لوك دو بونت</h3>
-                    <span id="j3-role">منتج سينمائي • فرنسا</span>
+                    <h3>Jean-Luc Moreau</h3>
+                    <span>Executive Producer • France</span>
                 </div>
             </div>
         </div>
@@ -496,170 +503,62 @@
     <div class="modal" id="submit-modal">
         <div class="modal-content">
             <span class="modal-close" onclick="closeModal()">&times;</span>
-            <h2 style="color: var(--primary); margin-bottom: 20px; font-family: 'Cinzel', serif;" id="modal-form-title">تقديم فيلم للمهرجان</h2>
+            <h2 style="color: var(--primary); margin-bottom: 22px; font-family: 'Cinzel', serif;">Official Film Submission</h2>
             
             <div class="form-group">
-                <label id="lbl-title">عنوان الفيلم</label>
-                <input type="text" placeholder="اكتب اسم الفيلم هنا...">
+                <label>Film Title</label>
+                <input type="text" placeholder="Enter original film title...">
             </div>
 
             <div class="form-group">
-                <label id="lbl-director">اسم المخرج</label>
-                <input type="text" placeholder="اسم المخرج الكامل...">
+                <label>Director's Full Name</label>
+                <input type="text" placeholder="Enter director's name...">
             </div>
 
             <div class="form-group">
-                <label id="lbl-cat">فئة المسابقة</label>
+                <label>Competition Category</label>
                 <select>
-                    <option>روائي طويل</option>
-                    <option>وثائقي</option>
-                    <option>سينما تجريبية</option>
-                    <option>فيلم قصير</option>
+                    <option>Feature Narrative</option>
+                    <option>Documentary Cinema</option>
+                    <option>Experimental & Visual Art</option>
+                    <option>Short Films</option>
                 </select>
             </div>
 
             <div class="form-group">
-                <label id="lbl-link">رابط الفيلم (Vimeo / YouTube / Password)</label>
-                <input type="text" placeholder="https://...">
+                <label>Private Screener Link (Vimeo / YouTube + Password)</label>
+                <input type="text" placeholder="https://vimeo.com/...">
             </div>
 
-            <button class="submit-film-btn" style="width: 100%; padding: 12px; margin-top: 10px;" onclick="alert('تم استلام طلب التقديم بنجاح!')" id="btn-submit-final">إرسال طلب المشاركة</button>
+            <button class="submit-film-btn" style="width: 100%; padding: 13px; margin-top: 10px;" onclick="submitEntry()">Submit Application</button>
         </div>
     </div>
 
     <!-- Footer -->
-    <footer>
-        <p id="footer-text">&copy; 2026 CINE FESTIVAL. جميع الحقوق محفوظة. المنصة الرقمية الرسمية للأفلام العالمية.</p>
+    <footer id="awards">
+        <p>&copy; 2026 ICF — International Cinema Festival. All Rights Reserved.</p>
     </footer>
 
     <!-- JS Scripts -->
     <script>
-        let currentLang = 'ar';
-
-        const dict = {
-            ar: {
-                navAbout: "عن المهرجان",
-                navCategories: "مسابقات المهرجان",
-                navJury: "لجنة التحكيم",
-                navAwards: "الجوائز",
-                btnSubmitHero: "تقديم فيلمك الان",
-                heroBadge: "الدورة الأولى الرقمية العالمية • 2026",
-                heroTitle: "مهرجان السينما الرقمي الدولي",
-                heroSub: "منصة عالمية تحتفي بإبداعات المخرجين والصناع مستقلين وعالميين في كافة الفئات السينمائية.",
-                heroBtnPrimary: "ارسل فيلمك للمشاركة",
-                statAwards: "مجموع الجوائز",
-                statCats: "مسابقات رسمية",
-                statDigital: "عروض رقمية عالمية",
-                catTitle: "مسابقات المهرجان الرسمية",
-                catSub: "نستقبل المشاركات السينمائية من جميع أنحاء العالم في أربع فئات رئيسية",
-                c1Title: "الأفلام الروائية الطويلة",
-                c1Desc: "المسابقة الرسمية للأفلام الروائية الطويلة التي تتجاوز 60 دقيقة ذات الرؤية البصرية والتعبيرية العميقة.",
-                c2Title: "الأفلام الوثائقية",
-                c2Desc: "الأعمال الوثائقية التي تسلط الضوء على القضايا الإنسانية، التحولات الاجتماعية، والذاكرة العمرانية.",
-                c3Title: "السينما التجريبية والفن البصري",
-                c3Desc: "الأعمال البصرية التي تتجاوز السرد التقليدي، معتمدة على اللغة البصرية والمؤثرات الحسية الحرة.",
-                c4Title: "الأفلام القصيرة",
-                c4Desc: "المسابقة المخصصة للأفلام القصيرة (أقل من 30 دقيقة) للمخرجين والمبدعين المستقلين.",
-                juryTitle: "لجنة التحكيم الدولية",
-                jurySub: "نخبة من صناع السينما والمخرجين والنقاد المعترف بهم دولياً",
-                j1Role: "رئيس لجنة التحكيم • مخرج وباحث",
-                j2Role: "ناقدة سينمائية • ألمانيا",
-                j3Role: "منتج سينمائي • فرنسا",
-                modalFormTitle: "تقديم فيلم للمهرجان",
-                lblTitle: "عنوان الفيلم",
-                lblDirector: "اسم المخرج",
-                lblCat: "فئة المسابقة",
-                lblLink: "رابط الفيلم (Vimeo / YouTube / Password)",
-                btnSubmitFinal: "إرسال طلب المشاركة",
-                footerText: "&copy; 2026 CINE FESTIVAL. جميع الحقوق محفوظة. المنصة الرقمية الرسمية للأفلام العالمية."
-            },
-            en: {
-                navAbout: "About",
-                navCategories: "Categories",
-                navJury: "Jury Panel",
-                navAwards: "Awards",
-                btnSubmitHero: "Submit Your Film",
-                heroBadge: "1st Global Digital Edition • 2026",
-                heroTitle: "INTERNATIONAL DIGITAL FILM FESTIVAL",
-                heroSub: "A global platform celebrating independent and international filmmaking excellence across all cinematic categories.",
-                heroBtnPrimary: "Submit Your Entry",
-                statAwards: "Total Cash Prizes",
-                statCats: "Official Categories",
-                statDigital: "Global Digital Screenings",
-                catTitle: "Official Competition Categories",
-                catSub: "Accepting worldwide submissions across four primary cinematic categories",
-                c1Title: "Feature Narrative Films",
-                c1Desc: "Official competition for feature narrative films over 60 minutes with profound visual and narrative vision.",
-                c2Title: "Documentary Cinema",
-                c2Desc: "Documentary works highlighting human conditions, social transformations, and urban memory.",
-                c3Title: "Experimental & Visual Art",
-                c3Desc: "Visual works moving beyond traditional narrative, relying on sensory visual language.",
-                c4Title: "Short Film Section",
-                c4Desc: "Dedicated competition for short films (under 30 minutes) for independent creators.",
-                juryTitle: "International Jury Panel",
-                jurySub: "Renowned filmmakers, critics, and producers from around the world",
-                j1Role: "Jury President • Director & Scholar",
-                j2Role: "Film Critic • Germany",
-                j3Role: "Film Producer • France",
-                modalFormTitle: "Submit Film Entry",
-                lblTitle: "Film Title",
-                lblDirector: "Director's Name",
-                lblCat: "Submission Category",
-                lblLink: "Screening Link (Vimeo / YouTube / Password)",
-                btnSubmitFinal: "Submit Application",
-                footerText: "&copy; 2026 CINE FESTIVAL. All Rights Reserved. Official Global Digital Platform."
-            }
-        };
-
-        function toggleLanguage() {
-            currentLang = currentLang === 'ar' ? 'en' : 'ar';
-            document.documentElement.lang = currentLang;
-            document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
-            document.querySelector('.lang-btn').innerText = currentLang === 'ar' ? 'EN' : 'AR';
-
-            const t = dict[currentLang];
-            document.getElementById('nav-about').innerText = t.navAbout;
-            document.getElementById('nav-categories').innerText = t.navCategories;
-            document.getElementById('nav-jury').innerText = t.navJury;
-            document.getElementById('nav-awards').innerText = t.navAwards;
-            document.getElementById('btn-submit-hero').innerText = t.btnSubmitHero;
-            document.getElementById('hero-badge').innerText = t.heroBadge;
-            document.getElementById('hero-title').innerText = t.heroTitle;
-            document.getElementById('hero-sub').innerText = t.heroSub;
-            document.getElementById('hero-btn-primary').innerText = t.heroBtnPrimary;
-            document.getElementById('stat-awards').innerText = t.statAwards;
-            document.getElementById('stat-cats').innerText = t.statCats;
-            document.getElementById('stat-digital').innerText = t.statDigital;
-            document.getElementById('cat-title').innerText = t.catTitle;
-            document.getElementById('cat-sub').innerText = t.catSub;
-            document.getElementById('c1-title').innerText = t.c1Title;
-            document.getElementById('c1-desc').innerText = t.c1Desc;
-            document.getElementById('c2-title').innerText = t.c2Title;
-            document.getElementById('c2-desc').innerText = t.c2Desc;
-            document.getElementById('c3-title').innerText = t.c3Title;
-            document.getElementById('c3-desc').innerText = t.c3Desc;
-            document.getElementById('c4-title').innerText = t.c4Title;
-            document.getElementById('c4-desc').innerText = t.c4Desc;
-            document.getElementById('jury-title').innerText = t.juryTitle;
-            document.getElementById('jury-sub').innerText = t.jurySub;
-            document.getElementById('j1-role').innerText = t.j1Role;
-            document.getElementById('j2-role').innerText = t.j2Role;
-            document.getElementById('j3-role').innerText = t.j3Role;
-            document.getElementById('modal-form-title').innerText = t.modalFormTitle;
-            document.getElementById('lbl-title').innerText = t.lblTitle;
-            document.getElementById('lbl-director').innerText = t.lblDirector;
-            document.getElementById('lbl-cat').innerText = t.lblCat;
-            document.getElementById('lbl-link').innerText = t.lblLink;
-            document.getElementById('btn-submit-final').innerText = t.btnSubmitFinal;
-            document.getElementById('footer-text').innerHTML = t.footerText;
-        }
-
         function openModal() {
             document.getElementById('submit-modal').style.display = 'flex';
         }
 
         function closeModal() {
             document.getElementById('submit-modal').style.display = 'none';
+        }
+
+        function submitEntry() {
+            alert('Your submission has been received by the ICF Selection Committee.');
+            closeModal();
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('submit-modal');
+            if (event.target === modal) {
+                closeModal();
+            }
         }
     </script>
 </body>
